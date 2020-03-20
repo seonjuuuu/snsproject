@@ -1,0 +1,39 @@
+<input type="checkbox" id="menuicon">
+
+<div class="header">
+
+    <label for="menuicon" class="menubtn">
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </label>
+    <div class="hambergur">
+        <a href="/mainpage"><img src="/img/logoname.svg" alt="" width="200"></a>
+    </div>
+    <div class="loginimg">
+
+            <a href="/profile"><img id="loginImg" onerror="this.src='/img/not.png';" src= "<%= path %>"></a>
+           
+    </div>
+   
+    <!-- <button type="button" id="logoutbtn"><a href="/logout">로그아웃</a></button> -->
+</div>
+
+<div class="navbar">
+    <div class="menuarea">
+
+        <h1>MENU</h1>
+        <h5><span style="font-size: large; color: purple;"><%= userName %></span>님 반갑습니다</h5>
+        <ul class="areamenu">
+
+            <li><a href="/mainpage">HOME</a></li>
+            <li><a href="/editinfo">회원정보</a></li>
+            <li><a href="/mainpage/service">이용약관</a></li>
+            <li><a href="/mainpage/sns">개인정보취급방침</a></li>
+            <li><a href="/logout">로그아웃</a></li>
+
+        </ul>
+
+    </div>
+</div>

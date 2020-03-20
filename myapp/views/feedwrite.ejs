@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <% include ./head.ejs %>
+<body>
+    <div class="wrapper">
+    <% include ./header.ejs %>
+
+    <div class="container">
+
+
+        <div class="content">
+           
+            <div class="feed">
+                <div class="feed-content">
+                    <div class="logoName">
+        
+                            <div class="feedloginimg">
+        
+                                <a href="#"><img id="loginImg" onerror="this.onerror=null; this.src='https://library.kissclipart.com/20180906/wtq/kissclipart-user-profile-clipart-user-profile-computer-icons-15b5c3086edf7512.png';" src= "<%= path %>"></a>
+                            
+                            </div>
+                            
+                            <h5 style="font-size: 20px; color: rgb(158, 152, 158)" ><%= userName %>님 당신의 이야기를 보여주세요</h5>
+                    </div>
+
+                    <div class="feedUpPhoto">
+                        <div class="feedContent">
+                            <div class="feedUpimg">
+    
+                                <img id="feedUpImg" onerror="this.onerror=null; this.src='/img/feedup.png';"  src= "">
+    
+                            </div>
+                                                
+                            <textarea autofocus > </textarea>
+                        </div>
+                           
+                        <div class="feedCamera">
+                            <label for="feedupfile">
+
+                                <i class="fas fa-camera"></i><p>사진 등록</p>
+
+                            </label>
+                        </div>
+                        <input id="feedupfile" type="file" accept=".jpg,.png">
+                    </div>
+                    <button type="submit" id="feedupbtn">SUBMIT</button>
+                    
+
+                
+                </div>
+            </div>
+    
+
+            
+    
+              
+        </div>
+
+    </div>
+
+</body>
+</html>

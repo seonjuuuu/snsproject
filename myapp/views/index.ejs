@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <% include ./head.ejs %>
+  <body>
+    <div class="login-body">
+      <div class ="login-page">
+          
+          
+              <!-- <h1> Tocstagram <img src ="./img/logo.png" alt="로고" width="50" ></h1> -->
+          <div class="mainlogo"></div>
+          <div class = "mainpage">
+
+            <h2>로그인</h2>
+          
+              <div class="mainlogin">
+                <form name="loginForm" action="/login" method="POST" >
+                <input type ="email" placeholder="e-mail" id="email" size="30"  required><br>
+                <input type ="password" placeholder="password" id="password" maxlength="20" size="30" required ><br>
+                <button type= "submit" id="loginbtn">LOGIN</button>
+                <p>계정이 없으신가요? <a href ="/join" >가입하기</a></p>
+    
+                </form>
+            
+              </div>
+      
+          </div>
+      </div>
+  </div> 
+     
+  
+
+  </body>
+  <script>
+
+      $(document).ready(function(){
+        $("#loginbtn").on("click", function (e) {
+        e.preventDefault();
+        var email = $("#email").val();
+        var password = $("#password").val();
+        // console.log(email, password);
+          
+          if(confirm("로그인하시겠습니까?")){
+            $.ajax ({
+              type: "POST",
+              url:"/login",
+              data:{
+                EMAIL: email,
+                PASSWORD: password
+              },
+              
+              success:function(res){
+                if(res ==="true"){
+                  alert("로그인 성공");
+       
+                window.location.assign("/mainpage")
+                } else if ( res === "false"){ alert("로그인 실패")}
+ 
+                else {}
+              }
+            })
+
+         
+          // } else{
+          //   return false;
+          }
+        })
+      })
+  </script>
+</html>

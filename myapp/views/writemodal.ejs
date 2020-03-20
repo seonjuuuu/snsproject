@@ -1,0 +1,46 @@
+    <!-- 피드쓰기 -->
+    <div class="modal">
+        <div class="feed">
+            <div class="feed-content">
+                <div class="logoName">
+
+                    <div class="feedloginimg">
+
+                        <a href="#"><img id="loginImg" onerror="this.onerror=null; this.src='/img/not.png';"
+                                src="<%= path %>"></a>
+
+                    </div>
+
+                    <h5 style="font-size: 20px; color: rgb(158, 152, 158)"><%= userName %>님 당신의 이야기를 보여주세요</h5>
+                    <div class="feedclose"><button type="button" id="feedclosebtn"></button></div>
+                </div>
+
+                <div class="feedUpPhoto">
+                    <div class="feedContent">
+                        <div class="feedUpimg">
+
+                            <img id="feedUpImg" onerror="this.onerror=null; this.src='/img/feedup.png';" src=" ">
+
+                        </div>
+
+                        <textarea id="feedcontent" autofocus> </textarea>
+                    </div>
+
+                    <div class="feedCamera">
+                        <label for="feedupfile">
+
+                            <i class="fas fa-camera"></i>
+                            <p>사진 등록</p>
+
+                        </label>
+                    </div>
+                    <input id="feedupfile" type="file" accept=".jpg,.png">
+                </div>
+                <button type="submit" id="feedupbtn">SUBMIT</button>
+
+
+
+
+            </div>
+        </div>
+    </div>

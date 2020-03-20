@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<% include ./head.ejs %>
+
+<body>
+    <div class="wrapper">
+        <% include ./header.ejs %>
+
+        <div class="container">
+
+            <div class="content">
+                <div class="feed">
+                    <div class="mainpage">
+                        <h2>회원정보수정</h2>
+                        <input id="joinprofile" type="file" accept=".jpg,.png">
+                        <div class="firstJoin">
+                            <from name="join" method="post">
+                                <div class="editphoto">
+                                    <div class="profileimg">
+                                        <!-- <div class="humenicon"> -->
+                                            <!-- <i class="fas fa-user-circle "></i> -->
+                                        <!-- </div> -->
+                                        <!-- <div class="preImg"> -->
+                                            <img id="proImg" onerror="this.src='https://library.kissclipart.com/20180906/wtq/kissclipart-user-profile-clipart-user-profile-computer-icons-15b5c3086edf7512.png';" src= "<%= path %>">
+                                        <!-- </div> -->
+                                    </div>
+                                       
+                                    <div class="cameraIcon">
+                                        <label for="joinprofile">
+            
+                                            <i class="fas fa-camera"></i>
+            
+                                        </label>
+                                    </div>
+                                </div>
+    
+                                <div class="edit">
+                                    <input type="text" id="name" placeholder="닉네임" value=<%= userName %> ><br>
+                                    <input type="password" id="password" placeholder="password (최소 8글자이상)" maxlength="20" required  ><br>
+                                    <input type="password" id="repassword" placeholder="password 확인" maxlength="20" required ><br>
+                                    <input type="text" id="introDuce" placeholder="한줄 자기소개" value="<%= introDuce %>" >
+                                    <button type="submit" id="editbtn">EDIT</button>
+                                    <button type="button" id="deletebtn">탈퇴</button>
+                                </div>
+    
+                            </from>
+                        </div>
+                    </div>
+                </div>
+    
+    
+            </div>
+
+
+
+
+
+        </div>
+</body>
+<script src="/js/editinfo.js" type="text/javascript"></script>
+
+
+</html>

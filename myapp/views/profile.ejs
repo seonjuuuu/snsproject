@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<% include ./head.ejs %>
+
+<body>
+    <% include ./writemodal.ejs %>
+
+    <div class="imgmodal">
+        <div class="feed">
+            <div class="pre_profile">
+                <div class="feedclose"><button type="button" id="feedclosebtn"></button></div>
+             
+                <img id="loginImg" onerror="this.onerror=null; this.src='/img/not.png';" src="<%= path %>">
+                   
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <% include ./header.ejs %>
+
+        <div class="container">
+
+            <div class="content">
+                <div class="profile_feed">
+                    <div class="userprofile">
+
+                        <div class="user_img">
+
+                            <img id="loginImg" onerror="this.onerror=null; this.src='/img/not.png';" src="<%= path %>">
+
+                        </div>
+                        <div class="user">
+                            <dl>
+                                <dt><%= userName %></dt>
+                                <dd style="color: rgb(85, 83, 83);"><%= email %></dd>
+                                <dd><%= introDuce %></dd>
+                            </dl>
+                        </div>
+                        <div class="useredit">
+                            <a href="/editinfo"><button type="button">프로필편집</button></a>
+                        </div>
+                    </div>
+                    <hr style="width:100% ;border-bottom:0px">
+                    <div class="feed_box">
+                        <div class="feedbox">피드1</div>
+                        <div class="feedbox">피드2</div>
+                        <div class="feedbox">피드3</div>
+                        <div class="feedbox"><button type="button" id="plus"></button></div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+</body>
+
+<script src="/js/profile.js" type="text/javascript"></script>
+<script src="/js/writemodal.js" type="text/javascript"></script>
+
+</html>

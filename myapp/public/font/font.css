@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'BMHANNAAir';
+  src: url('BMHANNAAir.svg#BMHANNAAir') format('svg'),
+       url('BMHANNAAir.ttf') format('truetype'),
+       url('BMHANNAAir.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BMHANNAAir_ttf';
+  src: url('BMHANNAAir_ttf.eot');
+  src: url('BMHANNAAir_ttf.eot?#iefix') format('embedded-opentype'),
+       url('BMHANNAAir_ttf.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
