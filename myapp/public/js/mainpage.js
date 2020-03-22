@@ -15,6 +15,18 @@ $(document).ready(function(){
 
   //피드글쓰기//
   
- 
+  $.ajax({
+    type:"GET",
+    url:"http://13.125.149.206/api/feed",
+
+    success:function(res){
+      console.log(res)
+      
+    }
+    
+     
+  })
+
 
 })
+
