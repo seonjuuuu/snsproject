@@ -43,9 +43,9 @@
                     </div>
                     <hr style="width:100% ;border-bottom:0px">
                     <div class="feed_box">
-                        <div class="feedbox">피드1</div>
-                        <div class="feedbox">피드2</div>
-                        <div class="feedbox">피드3</div>
+                        <% for (let i=0; i < body.result.length; i++) { %>
+                          <a href="#"><div class ="feedbox"><img src="<%= body.result[i].PATH %>" onerror="this.onerror=null; this.src='/img/nothing.png';" id="myfeed"></div></a>
+                        <% } %>
                         <div class="feedbox"><button type="button" id="plus"></button></div>
                     </div>
 

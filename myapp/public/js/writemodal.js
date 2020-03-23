@@ -27,18 +27,18 @@ $(document).ready(function () {
                     axios.get(extensionUrl)
                         .then(res => {
                             var data = res.data
-                            console.log("1 ", res);
+                            // console.log("1 ", res);
                             // const getUploadUrl = "http://127.0.0.1:4000/api/common/fileUploadUrl?mimetype="+selectedFile.type+"&extension="+data.extension+"&fileName=test2"
                             const getUploadUrl = "http://13.125.149.206/api/common/fileUploadUrl?mimetype=" + selectedFile.type + "&extension=" + data.extension
                             axios.get(getUploadUrl)
                                 .then(s3Res => {
                                     let signatureUrl = s3Res.data.url
-                                    console.log("2 ", signatureUrl);
+                                    // console.log("2 ", signatureUrl);
                                     axios.put(signatureUrl, selectedFile, {})
                                         .then(function (s3res, data) {
-                                            console.log("3 ", s3res);
+                                            // console.log("3 ", s3res);
                                             // var imgsrc =s3res.request.responseURL;
-                                            console.log("4", s3res.request.responseURL)
+                                            // console.log("4", s3res.request.responseURL)
                                             var URL = s3res.request.responseURL
                                             // var imgsrc = URL.split(",");
 
@@ -49,7 +49,7 @@ $(document).ready(function () {
                         });
 
                 }
-                console.log(SRC)
+                // console.log(SRC)
 
 
 
@@ -69,7 +69,7 @@ $(document).ready(function () {
                    $("#content").focus();
                    return;
                 }
-                console.log()
+                // console.log()
 
                 if (confirm("피드를 등록할까요?")) {
 
@@ -89,7 +89,7 @@ $(document).ready(function () {
                             if(res==="true"){
                                 alert("피드등록 성공")
                                   
-                                 window.location.assign("/mainpage")
+                                 window.location.assign("/profile")
                             } else if( res === "false"){
                                 alert("피드등록 실패")
                             }

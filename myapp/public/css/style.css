@@ -370,13 +370,14 @@ button {
 }
 .area { 
     /* 내용 가운데정렬 */ 
- 
+/*  
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
     
     text-align: center;
+    margin-top: 50px;
     
     
     
@@ -418,7 +419,7 @@ button {
     color: white;
     font-size: 1em;
     border-radius: 0 25px 25px 0;
-    transform: translate(-5px,-1px)
+    transform: translateX(-4px);
     /* left: -30px; */
     
 }
@@ -449,11 +450,14 @@ button {
 /*mainpage의 피드박스 */
 .box {
     
-    display: flex;
+    /* display: flex;
     align-content: center;
-    justify-content: center;
+    justify-content: center; */
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
 }
-.box>.feedbox:nth-child(2){margin-left: 30px;margin-right: 30px;}
+
 .feedbox {
     width: 200px;
     height: 200px;
@@ -929,6 +933,10 @@ dd{
     display:flex;
     align-items: center;
  }
+ #myfeed{
+     width: 100%;
+     height: 100%;
+ }
  .feedmodal>button{
     width: 30px;
     height: 30px;
@@ -980,4 +988,36 @@ dd{
 }
 .feedBox>h5{
     margin: 10px 0 0 10px;
+}
+
+
+
+/* Paging Style Set */
+.paging {
+	margin-top: 15px;
+	text-align: center;
+	font-size: 0;
+}
+.paging div {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+    margin: 0 1px;
+    color: #7a7a7a;
+	border: 1px solid #dbdbdb;	
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 230%;
+    vertical-align: middle;
+    background-color: #fff;; 
+}
+.paging div:hover,
+.paging div:active,
+.paging div:focus {
+	border: 1px solid #659DFF;;	
+}
+.paging .strong {
+	color: #fff;
+	background: #659DFF;;
+	border: 1px solid #659DFF;;
 }
