@@ -23,5 +23,23 @@ $(document).ready(function(){
     });
 
 
+  //내가 모은 피드 뿌리기
 
+  $.ajax({
+      type:"GET",
+      url:"/"
+
+  })
+
+  for( var i=0 ; i<feed; i++){
+    console.log(feedpath)
+
+    // var newDIV = document.createElement("div");​
+    
+    // newDIV.innerHTML=feedpath[i].PATH;
+    // newDIV.setAttribute("class","feedbox");
+    // var feedclass = document.getElementsByClassName("feed_box");
+    // feedclass.appendChild(newDIV);
+
+  }
 })

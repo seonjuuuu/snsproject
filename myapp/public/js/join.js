@@ -273,7 +273,7 @@
     
         // $(".preImg").css("width","100%");
         // $(".preImg").css("object-fit","cover");
-        $("#preImg").css("display", "block"); //img를 보여줘라
+        // $("#preImg").css("display", "block"); //img를 보여줘라
         
         // $(".humenicon").css("display","none"); //이전에 있던 아이콘은 dispaly none해줘라
       

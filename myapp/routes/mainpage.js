@@ -62,6 +62,8 @@ router.post('/feedwrite',(req,res)=>{
 
 
 
+
+
 router.get('/feed', function(req, res, next) {
     res.render('feed', { title: 'feed', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH,  email:req.session.EMAIL});
   });
