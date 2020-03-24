@@ -30,7 +30,7 @@ $(document).ready(function(){
   let pageNum=1;
 
   $('.pBtn').on('click', function(e) {
-    var num = $(this).val()
+    var num = $(this).text()
     console.log(num)
     pageNum = num;      
     $('.pBtn').removeClass('strong')         
@@ -53,12 +53,13 @@ $(document).ready(function(){
         for (let i = (pageNum * limit)-limit; i<(pageNum*limit); i++){
          
           
-          var html = "<div class = 'feedbox'><img id=myfeed src ="+res.result[i].PATH+"></div>"
+          var html = "<div class = 'feedbox'><a href='/mainpage/feed?IDX="+res.result[i].IDX+"'><img id=myfeed src ="+res.result[i].PATH+"></a></div>"
           
       
           if(res.result[i].PATH==null) {
 
             var html="<div class='feedbox'><img id=myfeed src='/img/nothing.png'></div>"
+            // return;
             
           }
           

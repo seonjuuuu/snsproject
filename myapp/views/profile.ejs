@@ -44,7 +44,7 @@
                     <hr style="width:100% ;border-bottom:0px">
                     <div class="feed_box">
                         <% for (let i=0; i < body.result.length; i++) { %>
-                          <a href="#"><div class ="feedbox"><img src="<%= body.result[i].PATH %>" onerror="this.onerror=null; this.src='/img/nothing.png';" id="myfeed"></div></a>
+                          <a href="/mainpage/feed?IDX=<%= body.result[i].IDX %>"><div class ="feedbox"><img src="<%= body.result[i].PATH %>" onerror="this.onerror=null; this.src='/img/nothing.png';" id="myfeed"></div></a>
                         <% } %>
                         <div class="feedbox"><button type="button" id="plus"></button></div>
                     </div>

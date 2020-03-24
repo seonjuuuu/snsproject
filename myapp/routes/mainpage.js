@@ -55,9 +55,6 @@ router.post('/feedwrite',(req,res)=>{
      }
    })
 
-
-
-
 })
 
 
