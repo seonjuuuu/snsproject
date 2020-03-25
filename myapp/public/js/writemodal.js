@@ -84,12 +84,13 @@ $(document).ready(function () {
                             CONTENT: content,
                             PATH: src
                         },
-
+                        
                         success:function(res){
+                            console.log("data____",res)
                             if(res==="true"){
                                 alert("피드등록 성공")
                                   
-                                 window.location.assign("/profile")
+                                 window.location.assign("/mainpage")
                             } else if( res === "false"){
                                 alert("피드등록 실패")
                             }

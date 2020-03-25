@@ -1,0 +1,65 @@
+<!-- 프로필 클릭시 상세정보 확인 페이지 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<% include ./head.ejs %>
+
+<body>
+    <% include ./writemodal.ejs %>
+
+    <div class="imgmodal">
+        <div class="feed">
+            <div class="pre_profile">
+                <div class="feedclose"><button type="button" id="feedclosebtn"></button></div>
+             
+                <img id="preImg" onerror="this.onerror=null; this.src='/img/not.png';" src="/img/not.png">
+                   
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <% include ./header.ejs %>
+
+        <div class="container">
+
+            <div class="content">
+                <div class="profile_feed">
+                    <div class="userprofile">
+
+                        <div class="user_img">
+
+                            <img id="feeduserImg" onerror="this.onerror=null; this.src='/img/not.png';" src="/img/not.png">
+
+                        </div>
+                        <div class="user">
+                            <dl>
+                                <dt>닉네임</dt>
+                                <dd style="color: rgb(85, 83, 83);" class="feedemail">이메일</dd>
+                                <dd class="feedintroduce">자기소개</dd>
+                                <dd class="feedidx" style="display: none;" >IDX</dd>
+                            </dl>
+                        </div>
+                        <div class="useredit">
+                            <a href="/editinfo"><button type="button">프로필편집</button></a>
+                        </div>
+
+                    </div>
+                    <hr style="width:100% ;border-bottom:0px">
+                    <div class="feed_box">
+                                            
+                        <div class="feedPlusbox"><button type="button" id="plus"></button></div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+</body>
+
+<script src="/js/feedprofile.js" type="text/javascript"></script>
+<script src="/js/writemodal.js" type="text/javascript"></script>
+</html>

@@ -26,7 +26,7 @@ if(!req.session.IDX){
   res.redirect('/');
   return;
 }
-  res.render('mainpage', { title: 'main', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH, email:req.session.EMAIL  });
+  res.render('mainpage', { title: 'main', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH, email:req.session.EMAIL , idx:req.session.IDX  });
  
  
   
@@ -62,16 +62,16 @@ router.post('/feedwrite',(req,res)=>{
 
 
 router.get('/feed', function(req, res, next) {
-    res.render('feed', { title: 'feed', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH,  email:req.session.EMAIL});
+    res.render('feed', { title: 'feed', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH,  email:req.session.EMAIL, idx:req.session.IDX });
   });
 
 
   router.get('/sns', function(req, res, next) {
-    res.render('sns', { title: 'feed', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH,  email:req.session.EMAIL });
+    res.render('sns', { title: 'feed', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH,  email:req.session.EMAIL, idx:req.session.IDX  });
   });  
 
   router.get('/service', function(req, res, next) {
-    res.render('service', { title: 'profile', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH, email:req.session.EMAIL});
+    res.render('service', { title: 'profile', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH, email:req.session.EMAIL, idx:req.session.IDX });
   });  
 
 

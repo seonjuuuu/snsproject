@@ -89,6 +89,8 @@ router.put('/edit',(req,res)=>{
 
 })
 
+
+
 router.delete('/deleteEdit',(req,res)=>{
   var url ="http://13.125.149.206/api/user";
   var idx = req.session.IDX;

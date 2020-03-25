@@ -63,15 +63,18 @@
 
 * session이 없을 경우 index페이지로 이동 
 
-### 4. /profile (로그인유저 피드) 페이지 구현
+### 4. /feedprofile (User의 상세)  페이지 구현
 
 * header 부분 프로필 클릭시 /profile 페이지 이동
-* 현재 로그인한 사용자가 작성한 feed를 모아서 볼수 있다.
-* 프로필 편집 button 클릭시 /editinfo 페이지 이동
-* 사용자의 프로필 ( 사진, 닉네임, e-maill, introduce ) 나타냄 - 회원정보 수정하면 반영되어 나타남
-* 사용자의 프로필 사진 클릭시 프로필 사진 확대
+* 클릭한 프로필 user가 작성한 feed를 모아서 볼수 있다.
+* 프로필 편집 button 클릭시 /editinfo 페이지 이동 
+    * IDX가 session.IDX와 일치시만 버튼생성
+* 사용자의 프로필 ( 사진, 닉네임, e-maill, introduce ) 나타냄 
+    * 회원정보 수정하면 반영되어 나타남
+* 프로필 사진 클릭시 프로필 사진 확대
 * feed click 시 피드 상세페이지 이동 
 * '+ button' click 시 feedwrite modal창 show
+    * 프로필 클릭 IDX = session.IDX 가 일치할때만 버튼 생성
     * 현재 로그인 된 사용자 사진과 닉네임을 보여준다 ("(사용자닉네임)님 당신의 이야기를 보여주세요")
     * 사진 입력 - 사진 미리보기 가능
     * textarea를 통해서 feedcontent 입력

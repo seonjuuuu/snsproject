@@ -21,8 +21,8 @@ $(document).ready(function () {
     openparam=getUrlParams();
     // console.log(openparam)
     user_Idx=openparam.IDX;
-    // console.log(user_Idx)
-
+    // // console.log(user_Idx)
+  
     $.ajax({
         type:"GET",
         url:"http://13.125.149.206/api/feed?idx="+user_Idx,
@@ -38,15 +38,19 @@ $(document).ready(function () {
                 type:"GET",
                 url:"http://13.125.149.206/api/user/"+res.result[0].USER_IDX,
                 success:function(res){
-                    // console.log(res)
+                    console.log(res)
                     var feedUserName =res.result[0].NAME;
                     var feedUserPhoto= res.result[0].PATH;
-
+                    var feedUserIdx = res.result[0].IDX;
+               
                     if(feedUserPhoto){
 
                         $("#loginImg").attr('src',feedUserPhoto);
 
                     }
+
+             
+                    $('a').attr('href','/feedprofile?userIdx='+feedUserIdx)
 
                     $("h5").text(feedUserName);
 

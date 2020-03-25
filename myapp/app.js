@@ -10,7 +10,8 @@ var fileStoreOptions = {};
 var indexRouter = require('./routes/index');
 var mainpageRouter = require('./routes/mainpage');
 var editinfoRouter = require('./routes/editinfo');
-var profileRouter = require('./routes/profile');
+// var profileRouter = require('./routes/profile');
+var feedprofileRouter = require('./routes/feedprofile');
 
 var app = express();
 
@@ -38,8 +39,8 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/mainpage', mainpageRouter);
 app.use('/editinfo', editinfoRouter);
-app.use('/profile', profileRouter);
-
+// app.use('/profile', profileRouter);
+app.use('/feedprofile', feedprofileRouter);
 
 
 

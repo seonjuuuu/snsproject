@@ -25,7 +25,7 @@ router.get('/', function (req, res, next) {
   }, (error, response, body) => {
 
       if (!error && response.statusCode === 200) {
-        res.render('editinfo', { title: 'feed', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH , email:req.session.EMAIL });
+        res.render('editinfo', { title: 'feed', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH , email:req.session.EMAIL, idx:req.session.IDX  });
       }
     })
 
