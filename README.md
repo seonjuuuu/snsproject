@@ -108,6 +108,13 @@
    > 로그인한 사용자가 본인의 프로필 사진을 클릭했을 시 프로필편집 button + feedwrite modal창까지 함께 볼수 있음
 
    > header에 IDX값을 hidden으로 넣어 , 주소값의 쿼리스트링값과 비교하여 같다면 button구현
+ 2. 피드 상세페이지 (/feed)에서 textarea로 입력받은 값을 호출해서 data를 보여줬을때 엔터는 먹지 않음
+ > ajax값을 먼저 호출한후 값을 div에 넣어 보여준뒤 그 val값을 replace한다
+    > val값이 자체가 존재하지 않기 때문에 바뀌지 않는다 
+ > 받아온 데이터 값에 \n값을 replace해 </br>로 바꾼다
+    > ```
+        $("content).html(feedUserContent.replace(/\n\g,'</br>'))
+        ```
 
 
 

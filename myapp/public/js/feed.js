@@ -59,7 +59,7 @@ $(document).ready(function () {
 
             //피드내용 뿌리기//
 
-            $('#content').html(feedUserContent);
+            $('#content').html(feedUserContent.replace(/\n/g, '<br/>'));
             $("#feedphoto").attr('src',feedPhoto);
 
 
