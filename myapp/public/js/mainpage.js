@@ -29,20 +29,13 @@ $(document).ready(function(){
 
   let pageNum=1;
 
-  $('.pBtn').on('click', function(e) {
-    var num = $(this).text()
-    console.log(num)
-    pageNum = num;      
-    $('.pBtn').removeClass('strong')         
-    $(this).addClass('strong')
-    getUserFeed(pageNum)
-})
+
 
   getUserFeed(pageNum);
 
   function getUserFeed(pageNum){
     $(".box").empty();
-    var limit = 6 ;
+    var limit = 30 ;
 
     $.ajax({
       type:"GET",
@@ -50,9 +43,24 @@ $(document).ready(function(){
       success:function(res){
         console.log(res.result)
         var pageCnt = Math.ceil(res.result.length/limit);
-        for (let i = (pageNum * limit)-limit; i<(pageNum*limit); i++){
+       
+        // for (let i = (pageNum * limit)-limit; i<(pageNum*limit); i++){
          
           
+        //   var html = "<div class = 'feedbox'><a href='/mainpage/feed?IDX="+res.result[i].IDX+"'><img id=myfeed src ="+res.result[i].PATH+"></a></div>"
+          
+      
+        //   if(res.result[i].PATH==null) {
+
+        //     var html="<div class='feedbox'><img id=myfeed src='/img/nothing.png'></div>"
+        //     // return;
+            
+        //   }
+          
+        //   $('.box').append(html)
+
+        for (let i = (res.result.length-1)-(pageNum-1)*limit; i>(res.result.length-1)-(pageNum*limit); --i){
+         
           var html = "<div class = 'feedbox'><a href='/mainpage/feed?IDX="+res.result[i].IDX+"'><img id=myfeed src ="+res.result[i].PATH+"></a></div>"
           
       
@@ -108,6 +116,15 @@ $(document).ready(function(){
         
         getUserFeed(pageNum)
     })
+
+    $('.pBtn').on('click', function(e) {
+      var num = $(this).text()
+      console.log(num)
+      pageNum = num;      
+      $('.pBtn').removeClass('strong')         
+      $(this).addClass('strong')
+      getUserFeed(pageNum)
+  })
 
     $('.next').on('click', function(e) {
         // alert(pageNum)

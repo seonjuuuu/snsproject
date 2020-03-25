@@ -13,7 +13,7 @@
                 <div class="feed">
                     <div class="mainpage">
                         <h2>회원정보수정</h2>
-                        <input id="joinprofile" type="file" accept=".jpg,.png">
+                        <input id="joinprofile" type="file" accept=".jpg,.png,.jpeg">
                         <div class="firstJoin">
                             <from name="join" method="post">
                                 <div class="editphoto">
@@ -22,10 +22,14 @@
                                             <!-- <i class="fas fa-user-circle "></i> -->
                                         <!-- </div> -->
                                         <!-- <div class="preImg"> -->
-                                            <img id="proImg" onerror="this.src='https://library.kissclipart.com/20180906/wtq/kissclipart-user-profile-clipart-user-profile-computer-icons-15b5c3086edf7512.png';" src= "<%= path %>">
+                                            <img id="proImg" onerror="this.src='/img/not.png';" src= "<%= path %>">
                                         <!-- </div> -->
                                     </div>
                                        
+                                    <div class="cameraIcon second" id="delete">
+                                        <i class="far fa-trash-alt"></i>
+
+                                    </div>
                                     <div class="cameraIcon">
                                         <label for="joinprofile">
             

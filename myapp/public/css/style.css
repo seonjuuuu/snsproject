@@ -545,6 +545,7 @@ button {
     display: block;
 }
 
+
 #loginImg{
     display: block;
 
@@ -729,7 +730,12 @@ textarea:focus{
     margin: 0 auto;
     position:relative;
     top:-50px;
-    left: 40px;
+    /* left: -10px; */
+    display: inline-block;
+}
+.cameraIcon.second{
+    margin-right: 30px;
+    cursor: pointer;
 }
 .cameraIcon i {
     transform: translateY(4px);
@@ -881,7 +887,7 @@ dd{
 .pre_profile{
     margin: 0 auto;
     width: 500px;
-    height: auto;
+    height: 500px;
     padding: 30px;
     background-color: white;
     border-radius: 10px
@@ -889,6 +895,7 @@ dd{
 .pre_profile>img{
     width: 100%;
     height: 100%;
+    padding: 30px;
 }
 .pre_profile>.feedclose>button{
   transform: translate(410px,-10px);

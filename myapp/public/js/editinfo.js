@@ -1,7 +1,7 @@
     
     $(document).ready(function(){
 
-        
+
         var SRC=new Array;
  
         //비밀번호 확인
@@ -42,9 +42,12 @@
 
  
  
-     //프로필 사진 미리보기
- 
- 
+    //프로필 사진 삭제버튼
+     $("#delete").on("click",function(e){
+        $("#proImg").attr('src','')
+    })
+    
+  //프로필 사진 미리보기
      function readURL(input) {
          if (input.files && input.files[0]) { //파일이 있으면
              var reader = new FileReader(); //파일을 읽는 객체를 생성
@@ -97,7 +100,7 @@
        
          // $(".preImg").css("width","100%");
          // $(".preImg").css("object-fit","cover");
-         $("#proImg").css("display", "block"); //img를 보여줘라
+        //  $("#proImg").css("display", "block"); //img를 보여줘라
          
         //  $(".humenicon").css("display","none"); //이전에 있던 아이콘은 dispaly none해줘라
        
@@ -143,8 +146,10 @@ $("#editbtn").on("click",function(e){
 
 // img클릭시 반환값이 없을때
 
-    if(!src){
+    if(!src ){
        src=proimg;
+    }else if( $("#proImg").attr('src')=='/img/not.png'){
+        src='';
     }else {
         imgSrc=src.split("?");
         src=imgSrc[0];
@@ -177,6 +182,7 @@ $("#editbtn").on("click",function(e){
     }
 
 })
+
 
 //탈퇴 ajax
 
