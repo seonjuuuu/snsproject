@@ -2,25 +2,56 @@
   @import url('https://fonts.googleapis.com/css?family=Gothic+A1&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400'); */
   @import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Lato');
 
+/* Tablet Device */
+@media all and (max-width:768px)  {
+    /* 메인페이지  */
+    .box{
+     
+        grid-template-columns: repeat(1, 1fr);
+    
+    }
+    .animation{
+        display: none;
+    }
+    .mainpage{
+        width: auto;
+        height: auto;;
 
-            /* Tablet Device
-            @media all and (min-width:768px) and (max-width:1024px) {
-                body {
-                    font-size: 3rem !important;
-                }
-                .navbar {
-                    display: none;
-                }
-                .content {
-                    width: calc(100% - 22px) !important;
-                }
-            }
-            
-            /* Desktop Device */
-            /* @media all and (min-width:1025px) {
+    }
 
-            } */ 
+  
+    
+    
+   
+}
+
+/* Tablet Device */
+@media all and (min-width:768px) {
+    .box{
+     
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .animation{ display: inline-block;}
+    .mainpage{
+        width: 500px;
+        height: 500px;;
+
+    }
+    
+
+}
+
+/* Desktop Device */
+/* @media all and (min-width:1025px) {
+    .box{
+     
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .animation{ display: inline-block;}
+
+} */
   
 * {
     margin: 0;
@@ -98,8 +129,8 @@ button {
 
 
 .mainpage {
-    width: 500px;
-    height: 500px;
+    /* width: 500px;
+    height: 500px; */
     background-color: white;
     /* position: fixed; */
     /* top:50%;
@@ -366,7 +397,7 @@ button {
 .content{
     position: relative;
     min-height: 458px;
-    padding:20px;
+    padding:30px;
 }
 .area { 
     /* 내용 가운데정렬 */ 
@@ -394,7 +425,7 @@ button {
 .searchbtn{
     margin-bottom: 50px;
 }
-.searchbtn>input{
+/* .searchbtn>input{
     width: 300px;
     height: 45px;
     border: none;
@@ -405,20 +436,115 @@ button {
    cursor: default;
 
 
+} */
+
+.dropping-texts{
+    font-family:'BMHANNAAir';
+    font-size:40px;
+    font-weight:600;
+    color:rgb(248, 218, 242);
+    /* animation: bg 4s linear infinite; */
+    display: flex;
+    /* vertical-align: -2px; */
+    /* width: 800px; */
+    /* width: 300px; */
+}
+.dropping-texts>.wel{
+    display: inline-block;
+    width: 300px;
+    font-family:'BMHANNAAir';
+    text-align: center;
+    
+
 }
 
+.dropping-texts>.animation {
+    font-size:30px;
+    /* opacity:0; */
+    /* margin-left:-30px; */
+    /* position:absolute; */
+    font-weight:600;   
+    /* box-shadow: 0px 60px 25px -20px rgba(0,0,0,0.5); */
+    /* display: inline-block; */
+    /* width: 300px; */
+    text-align: left;
+    height: 36px;
+    vertical-align: -2px;
+    /* font-size: 40px; */
+    
+    
+}
+.animation>div{
+    font-size:0px;
+  opacity:0;
+  /* margin-left:-30px; */
+  position:absolute;
+  font-weight:600;   
 
+}
+
+.animation > div:nth-child(1) {
+    animation: roll 10s linear infinite 0s;
+  }
+  .animation > div:nth-child(2) {
+    animation: roll 10s linear infinite 4s;
+  }
+  .animation > div:nth-child(3) {
+    animation: roll 10s linear infinite 7s;
+  }
+  
+  @keyframes roll {
+    0% {
+      font-size:40px;
+      opacity:0;
+      margin-left:-30px;
+      margin-top:0px;
+      transform: rotate(-25deg);
+    }
+    3% {
+      opacity:1;
+      transform: rotate(0deg);
+    }
+    5% {
+      font-size:inherit;
+      opacity:1;
+      margin-left:0px;
+      margin-top:0px;
+    }
+    20% {
+      font-size:inherit;
+      opacity:1;
+      margin-left:0px;
+      margin-top:0px;
+      transform: rotate(0deg);
+    }
+    27% {
+      font-size:0px;
+      opacity:0.5;
+      margin-left:20px;
+      margin-top:100px;
+    }
+    100% {
+      font-size:0px;
+      opacity:0;
+      margin-left:-30px;
+      margin-top:0px;
+      transform: rotate(15deg);
+    }
+  }
+  
+ 
 
 .searchbtn>button{
     padding: 0;
-    width: 100px;
+    width: 300px;
     height: 45px;
     border:none;
     outline: none;
     background-color: rgb(121, 42, 121);
     color: white;
     font-size: 1em;
-    border-radius: 0 25px 25px 0;
+    border-radius: 25px;
     transform: translateX(-4px);
     /* left: -30px; */
     
@@ -454,7 +580,7 @@ button {
     align-content: center;
     justify-content: center; */
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
     grid-gap: 20px;
 }
 
@@ -464,6 +590,7 @@ button {
     background-color: rgba(255, 255, 255, 0.452);
     /* border: 1px solid black; */
     border-radius: 10px;
+    margin: 0 auto;
     
 }
 
@@ -639,6 +766,8 @@ button {
 .logoName>h5{
     display:inline-block;
     padding: 20px;
+    width: 90%;
+    font-size: 30%;
 }
 .feedUpimg {
     /* display: inline-block; */
@@ -675,7 +804,7 @@ textarea:focus{
     font-size: 20px;
     margin: 0 auto;
     position:relative;
-    transform: translate(40px,-20px);
+    transform: translate(5%,-20px);
 }
 .feedCamera p {
     display: inline-block;
@@ -685,7 +814,7 @@ textarea:focus{
 }
 
 #feedupbtn{
-    margin-left: 100px;
+    margin-left: 15%;
  
 }
 
@@ -698,7 +827,7 @@ textarea:focus{
     background-color:rgba(255, 255, 255, 0);
     cursor: pointer;
     margin:0;
-    transform: translateX(230px);
+    /* transform: translateX(230px); */
 
 }
 .modal{
