@@ -120,17 +120,22 @@
  for (let i = (res.result.length-1)-(pageNum-1)*limit; i>(res.result.length-1)-(pageNum*limit); --i){
          
           var html = "<div class = 'feedbox'><a href='/mainpage/feed?IDX="+res.result[i].IDX+"'><img id=myfeed src ="+res.result[i].PATH+"></a></div>"
+        
 ```
+> 피드 30개가 넘어가면 페이징 버튼 생성
 2. (/editinfo)회원정보수정페이지 삭제기능 추가
 > 사진 선택 후 삭제버튼을 누르면 이전의 사진이 PATH값으로 저장되는 문제 발생
->   > ```    if(!src ){
+>   > 
+```    
+    if(!src ){
        src=proimg;
     }else if( $("#proImg").attr('src')=='/img/not.png'){
         src='';
     }else {
         imgSrc=src.split("?");
         src=imgSrc[0];
-    } ```
+    } 
+```
 >   > else if구문 추가 src을 변환시켜서 ajax 호출하여 문제 해결
 
 

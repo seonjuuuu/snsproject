@@ -24,9 +24,23 @@
                         </div>
                         
                         <div class="feedBox" id="content" style="overflow: auto;"> </div>
-                        <div class="feedBox">좋아요 버튼 들어갈겁니다</div>
+                        <div class="feedBox" id="feed_like" style="display: inline-block;">
+ 
 
-                        <div class="feedBox"><hr style="width:100% ;border-bottom:0px;border-right:0px;border-left:0px ">댓글들어올자리</div>
+                            <div class="feedlike">
+                                <div class="dislike">
+                                    <i class="far fa-thumbs-up" id="dislike"></i>
+                                </div>
+                                <div class="like">
+                                    <i class="fas fa-thumbs-up" id="like" style="display:none;"></i>
+                                </div>
+                            </div>
+                            <div class="feedLikeCount" ></div>
+                            <p style="display: none;"><%= idx %></p>
+
+                        </div>
+
+                        <div class="feedBox" style="overflow: auto;"><hr style="width:100% ;margin-top:10px; border-bottom:0px;border-right:0px;border-left:0px ">댓글들어올자리</div>
                         <div class="feedBox">
                             <div class="feedloginimg">
                                 <img id="loginImg" onerror="this.onerror=null; this.src='/img/not.png';"src="<%= path %>">
