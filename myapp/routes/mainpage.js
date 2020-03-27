@@ -48,7 +48,7 @@ router.post('/feedwrite',(req,res)=>{
      json:data
    },(error,response,body)=>{
      if(!error&&response.statusCode===200){
-       console.log(response.body)
+      //  console.log(response.body)
        res.send("true")
      }else{
        res.send("false")

@@ -12,6 +12,7 @@ var mainpageRouter = require('./routes/mainpage');
 var editinfoRouter = require('./routes/editinfo');
 // var profileRouter = require('./routes/profile');
 var feedprofileRouter = require('./routes/feedprofile');
+var feededitRouter = require('./routes/feededit');
 
 var app = express();
 
@@ -41,6 +42,7 @@ app.use('/mainpage', mainpageRouter);
 app.use('/editinfo', editinfoRouter);
 // app.use('/profile', profileRouter);
 app.use('/feedprofile', feedprofileRouter);
+app.use('/feededit', feededitRouter);
 
 
 

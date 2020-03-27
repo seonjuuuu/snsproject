@@ -152,7 +152,7 @@
                            }
                            else{
                             //    alert("등록 오류")
-                            console.log(err)
+                            // console.log(err)
                            }
                        }
                    })
@@ -245,19 +245,19 @@
         axios.get(extensionUrl)
           .then(res => {      
               var data = res.data
-              console.log("1 ", res);
+            //   console.log("1 ", res);
               // const getUploadUrl = "http://127.0.0.1:4000/api/common/fileUploadUrl?mimetype="+selectedFile.type+"&extension="+data.extension+"&fileName=test2"
               const getUploadUrl = "http://13.125.149.206/api/common/fileUploadUrl?mimetype="+selectedFile.type+"&extension="+data.extension
               axios.get(getUploadUrl)
                 .then(s3Res => {      
                     let signatureUrl = s3Res.data.url
-                    console.log("2 ", signatureUrl);                  
+                    // console.log("2 ", signatureUrl);                  
                     axios.put(signatureUrl, selectedFile, {                    
                     })            
                     .then(function (s3res,data)  {
-                        console.log("3 " ,s3res);
+                        // console.log("3 " ,s3res);
                         // var imgsrc =s3res.request.responseURL;
-                        console.log("4", s3res.request.responseURL)
+                        // console.log("4", s3res.request.responseURL)
                         var URL =s3res.request.responseURL
                         // var imgsrc = URL.split(",");
                       
@@ -268,7 +268,7 @@
           });
         
         } 
-        console.log(SRC)
+        // console.log(SRC)
         
     
         // $(".preImg").css("width","100%");

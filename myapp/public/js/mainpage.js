@@ -41,7 +41,7 @@ $(document).ready(function(){
       type:"GET",
       url:"http://13.125.149.206/api/feed",
       success:function(res){
-        console.log(res.result)
+        // console.log(res.result)
         var pageCnt = Math.ceil(res.result.length/limit);
        
         // for (let i = (pageNum * limit)-limit; i<(pageNum*limit); i++){
@@ -119,7 +119,7 @@ $(document).ready(function(){
 
     $('.pBtn').on('click', function(e) {
       var num = $(this).text()
-      console.log(num)
+      // console.log(num)
       pageNum = num;      
       $('.pBtn').removeClass('strong')         
       $(this).addClass('strong')

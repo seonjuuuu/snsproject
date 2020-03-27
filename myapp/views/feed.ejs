@@ -17,16 +17,17 @@
                 </div>
                 <div class="feedBox">
                     <div class="feedloginimg">
-                        <a href="#"><img id="loginImg" onerror="this.onerror=null; this.src='/img/not.png';"
+                        <a href=""><img id="loginImg" onerror="this.onerror=null; this.src='/img/not.png';"
                                 src="#"></a>
 
                     </div>
-                    <h5 style="font-size: 1.5rem; color: rgb(22, 21, 22)"></h5>
+                    <h5 style="font-size: 1.5rem; color: rgba(22, 21, 22, 0.541)"></h5>
                 </div>
 
                 <div class="feedBox" id="content" style="overflow: auto; height: 100%;"> </div>
                 <div class="feedBox" id="feed_like" style="display: inline-block;">
 
+                    <a href="#" id="feed_edit"><span id="feededitbtn" ><i class="fas fa-user-edit" ></i></span></a>
 
                     <div class="feedlike">
                         <div class="dislike">
@@ -36,12 +37,13 @@
                             <i class="fas fa-heart" id="like" style="display:none;"></i>
                         </div>
                     </div>
+
                     <div class="feedLikeCount"></div>
                     <p style="display: none;"><%= idx %></p>
 
                 </div>
 
-                <div class="feedBox" style="overflow: auto; height: 200px;">
+                <div class="feedBox" style="overflow: auto; max-height: 250px;">
                     <hr style="background:rgba(128, 128, 128, 0.089); width:100% ;margin-top:10px; border:0; height: 1px;  ">
                     댓글자리</div>
                 <div class="feedBox">

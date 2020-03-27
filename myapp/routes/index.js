@@ -31,7 +31,7 @@ router.post('/login', (req, res) => {
       if (!error && response.statusCode === 200) {
         // console.log(request.session.user)
         // console.log('session', req.session)
-        console.log(response.body)
+        // console.log(response.body)
         
        
         let loginUser= response.body.login
@@ -42,7 +42,7 @@ router.post('/login', (req, res) => {
         req.session.NAME = loginUser.NAME;
         req.session.INTRODUCE = loginUser.INTRODUCE;
         req.session.PATH= loginUser.PATH;
-        console.log(req.session)
+        // console.log(req.session)
         res.send("true")
       } else {
           res.send("false")
@@ -75,12 +75,12 @@ router.put('/edit',(req,res)=>{
     json:data
   },(error,response,body)=>{
     if(!error &&response.statusCode===200){
-      console.log(response.body)
+      // console.log(response.body)
       req.session.NAME =req.body.NAME;
       req.session.INTRODUCE = req.body.INTRODUCE;
       req.session.PATH = req.body.PATH;
      
-      console.log(req.session)
+      // console.log(req.session)
       res.send("true")
     } else{
       res.send("false")

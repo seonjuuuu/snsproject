@@ -30,18 +30,20 @@ $(document).ready(function () {
         type:"GET",
         url:"http://13.125.149.206/api/feed?idx="+user_Idx,
         success:function(res){
-            console.log(res)
+            // console.log(res)
             // console.log(res.result[0].USER_IDX)
             var result = res.result[0];
             var feedUserContent = result.CONTENT;
             var feedlike = result.FEED_LIKE;
             var feedPhoto = result.PATH;
+            var feedUserIdx=result.USER_IDX;
+            var feedIdx=result.IDX;
 
             $.ajax({
                 type:"GET",
-                url:"http://13.125.149.206/api/user/"+res.result[0].USER_IDX,
+                url:"http://13.125.149.206/api/user/"+feedUserIdx,
                 success:function(res){
-                    console.log(res)
+                    // console.log(res)
                     var feedUserName =res.result[0].NAME;
                     var feedUserPhoto= res.result[0].PATH;
                     var feedUserIdx = res.result[0].IDX;
@@ -57,7 +59,7 @@ $(document).ready(function () {
 
                     $("h5").text(feedUserName);
                     $(".feedLikeCount").text(feedlike);
-
+                    $('#feed_edit').attr("href", "/feededit?feedIdx="+feedIdx);
                 }
             })
 
@@ -65,8 +67,14 @@ $(document).ready(function () {
 
             $('#content').html(feedUserContent.replace(/\n/g, '<br/>'));
             $("#feedphoto").attr('src',feedPhoto);
+     
+            // console.log(idx)
 
+            if(feedUserIdx==idx){
+                $("#feededitbtn").css("display","inline");
+            }
 
+           
 
 
 
@@ -76,7 +84,7 @@ $(document).ready(function () {
         }
     })
 
-
+    
 
   //좋아요버튼
     $("#dislike").on("click",function(){
@@ -84,7 +92,7 @@ $(document).ready(function () {
             type:"GET",
             url:"http://13.125.149.206/api/feed?idx="+user_Idx,
             success:function(res){
-                console.log(res)
+                // console.log(res)
                 // console.log(res.result[0].USER_IDX)
                 var result = res.result[0];
                 var feedlike=result.FEED_LIKE
@@ -94,9 +102,9 @@ $(document).ready(function () {
                     type:"POST",
                     url:"http://13.125.149.206/api/feedLike/"+result.IDX+"/"+idx,
                     success:function(res){
-                        console.log(res)
+                        // console.log(res)
 
-                        console.log(feedlike)
+                        // console.log(feedlike)
                         $(".feedLikeCount").text(feedlike+1);
 
                         $("#dislike").css("display","none");
@@ -120,7 +128,7 @@ $(document).ready(function () {
             type:"GET",
             url:"http://13.125.149.206/api/feed?idx="+user_Idx,
             success:function(res){
-                console.log(res)
+                // console.log(res)
                 // console.log(res.result[0].USER_IDX)
                 var result = res.result[0];
                 var feedlike=result.FEED_LIKE
@@ -130,9 +138,9 @@ $(document).ready(function () {
                     type:"DELETE",
                     url:"http://13.125.149.206/api/feedLike/"+result.IDX+"/"+idx,
                     success:function(res){
-                        console.log(res)
+                        // console.log(res)
 
-                        console.log(feedlike)
+                        // console.log(feedlike)
                         $(".feedLikeCount").text(feedlike-1);
 
                         $("#like").css("display","none");
@@ -151,7 +159,10 @@ $(document).ready(function () {
 
 
 
-
+    if($("h5").html(null)){
+        $("h5").html("(탈퇴한 사용자)")
+        
+    }
 
 
 

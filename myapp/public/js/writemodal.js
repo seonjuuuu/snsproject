@@ -86,7 +86,7 @@ $(document).ready(function () {
                         },
                         
                         success:function(res){
-                            console.log("data____",res)
+                            // console.log("data____",res)
                             if(res==="true"){
                                 alert("피드등록 성공")
                                   

@@ -59,7 +59,7 @@ $(document).ready(function () {
         url:"http://13.125.149.206/api/user/"+user_Idx,
         async: false,
         success:function(res){
-            console.log(res)
+            // console.log(res)
             // console.log(res.result[0].USER_IDX)
             var result = res.result[0];
             var feedUserEmail = result.EMAIL;
@@ -69,7 +69,7 @@ $(document).ready(function () {
             var feedUserIdx= result.IDX;
 
 
-            console.log(feedUserPhoto)
+            // console.log(feedUserPhoto)
 
             $('dt').html(feedUserName);
             $("#feeduserImg").attr('src',feedUserPhoto);
@@ -92,7 +92,7 @@ $(document).ready(function () {
         url:"http://13.125.149.206/api/feed?userIdx="+user_Idx,
         success:function(res){
 
-            console.log(res)
+            // console.log(res)
 
             for(i=res.result.length-1; i>-1; --i){
                 var html ="<div class = 'feedbox'><a href='/mainpage/feed?IDX="+res.result[i].IDX+"'><img id=myfeed src ="+res.result[i].PATH+"></a></div>"
@@ -120,8 +120,8 @@ $(document).ready(function () {
         var feedUser_Idx= $("h6").html();
         
     
-        console.log(loginUser_Idx);
-        console.log(feedUser_Idx);
+        // console.log(loginUser_Idx);
+        // console.log(feedUser_Idx);
     
         if(loginUser_Idx !== feedUser_Idx){
     
