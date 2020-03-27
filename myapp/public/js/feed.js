@@ -160,7 +160,7 @@ $(document).ready(function () {
 
 
     if($("h5").html(null)){
-        $("h5").html("(탈퇴한 사용자)")
+        $("h5").html("(알수없는 사용자)")
         
     }
 

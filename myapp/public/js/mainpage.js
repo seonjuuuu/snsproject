@@ -35,7 +35,7 @@ $(document).ready(function(){
 
   function getUserFeed(pageNum){
     $(".box").empty();
-    var limit = 30 ;
+    var limit = 21 ;
 
     $.ajax({
       type:"GET",

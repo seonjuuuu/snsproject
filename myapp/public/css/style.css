@@ -61,7 +61,13 @@
         width: 100%;
     }
    
-    
+    .feed-content{
+        margin-top:25%;
+    }
+
+    .feedmodal>button{
+        margin: 10px 0 90px  calc(100% - 40px);
+    }
    
 }
 
@@ -117,6 +123,13 @@
 
 }
 
+.feed-content{
+    margin:0 auto;
+}
+
+.feedmodal>button{
+    margin: 10px 0 10px  calc(100% - 40px);
+}
 
 
 
@@ -723,7 +736,7 @@ button {
 }
 
 .feed-content {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     width: 720px;
     height: auto;
     padding: 30px ;
@@ -1141,6 +1154,7 @@ dd{
      /* display:grid; */
      grid-template-columns: repeat(2, 1fr);
      grid-template-rows: 80px 130px 30px 250px 80px;
+     margin: 0 20px 0 10px;
 
 
  }
@@ -1171,7 +1185,7 @@ dd{
     background-size: cover;
     background-color: rgba(255, 255, 255, 0);
     cursor: pointer;
-    margin: 10px 0 10px  calc(100% - 40px) ;
+    /* margin: 10px 0 10px  calc(100% - 40px) ; */
     /* margin-left: calc(100% - 40px);
     margin-top:10px;
     margin-bottom: 10px; */
