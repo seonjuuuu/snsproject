@@ -65,7 +65,7 @@
 
 ### 4. /feedprofile (User의 상세)  페이지 구현
 
-* header 부분 프로필 클릭시 /profile 페이지 이동
+* header 부분 프로필 클릭시 /feedprofile 페이지 이동
 * 클릭한 프로필 user가 작성한 feed를 모아서 볼수 있다.
 * 프로필 편집 button 클릭시 /editinfo 페이지 이동 
     * IDX가 session.IDX와 일치시만 버튼생성
