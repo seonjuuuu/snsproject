@@ -52,7 +52,7 @@ $(document).ready(function () {
     openparam=getUrlParams();
     // console.log(openparam)
     user_Idx=openparam.userIdx;
-    console.log(user_Idx)
+    // console.log(user_Idx)
 
     $.ajax({
         type:"GET",

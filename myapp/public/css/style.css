@@ -48,9 +48,10 @@
     .feedBox>img{
         border-radius: 10px;
     }
-    #loginImg{
+    #loginImg, #feeduserImg{
         display: none;
     }
+
     .feedmodal{
         height: 100%;
     }
@@ -106,11 +107,12 @@
     height: 100%;
     align-items:center;
 }
-#loginImg{
+#loginImg, #feeduserImg{
     display: block;
     width: 100%;
     height: 100%;
 }
+
 .feedloginimg{
     display: inline-block;
 }
@@ -1154,7 +1156,7 @@ dd{
      /* display:grid; */
      grid-template-columns: repeat(2, 1fr);
      grid-template-rows: 80px 130px 30px 250px 80px;
-     margin: 0 20px 0 10px;
+     margin: 0 20px 20px 10px;
 
 
  }
@@ -1316,6 +1318,32 @@ dd{
      text-align: center;
  }
  
-  
- 
+ /* 댓글작성 */
+ #replyImg {
+    width: 100%;
+    height: 100%;
+
+
+ } 
+ .reply , .replyName{
+     display: inline-block;
+     margin:3px 5px 0 10px;
+
+ }
+ .feedUserId{
+     display:flex;
+     align-items: center;
+ }
+.userReply{
+    margin: 15px 5px 0 5px;
+}
+.Usercomment{
+    display: flex;
+    align-items:center;
+    padding: 10px;
+}
+.Usercomment>i{
+    color:rgba(128, 128, 128, 0.404);
+    margin-left: 3px;
+}
  

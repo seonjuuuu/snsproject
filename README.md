@@ -65,7 +65,7 @@
 
 ### 4. /feedprofile (User의 상세)  페이지 구현
 
-* header 부분 프로필 클릭시 /profile 페이지 이동
+* header 부분 프로필 클릭시 /feedprofile 페이지 이동
 * 클릭한 프로필 user가 작성한 feed를 모아서 볼수 있다.
 * 프로필 편집 button 클릭시 /editinfo 페이지 이동 
     * IDX가 session.IDX와 일치시만 버튼생성
@@ -87,8 +87,8 @@
     * 쿼리스트링을 이용해 feed IDX값을 받아와 api를 호출해 result값을 받아와 화면에 보여준다 
 * 댓글 입력창에 로그인된 user의 photo를 보여준다.
 * 댓글 input창을 통해 value값을 입력받아 ajax POST를 보내 댓글을 서버로 보내준다.
-* 좋아요 버튼/ 좋아요 갯수 ( 구현 예정 )
-* 입력받은 댓글 (구현 예정)
+* 좋아요 버튼/ 좋아요 갯수 
+* 입력받은 댓글
 
 ### 6. /editinfo (회원정보수정) 페이지 구현
 
@@ -163,6 +163,11 @@
                 $("#feededitbtn").css("display","inline");
             }
 ```
+### 2020-03-28
+
+1. 댓글 데이터 api 호출 
+> 현재 서버상에 댓글을 작성한 USER_IDX가 저장이 되지않아 사진과 닉네임을 불러오는데 문제가 발생
+
 
 
 

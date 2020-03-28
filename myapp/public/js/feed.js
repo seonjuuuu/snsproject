@@ -13,7 +13,7 @@ function goBack() {
 
 $(document).ready(function () {
 
-    var idx = $("p").html();
+    var idx = $("#sessionIdx").html();
 
     
     // if($("#feedphoto").attr('src') === null){
@@ -81,6 +81,24 @@ $(document).ready(function () {
 
 
 
+        }
+    })
+
+    $.ajax({
+        type:"GET",
+        url:"http://13.125.149.206/api/feedReply?feedIdx="+user_Idx,
+        success:function(res){
+
+            console.log(res)
+            for( let i=0; i< res.result.length; i++){
+
+                var html ="<div class='Usercomment'><span class='reply'><p>"+res.result[i].CONTENT+"</p></span><i class='far fa-edit'></i><i class='far fa-trash-alt'></i></div>"
+
+                $(".feedreply").append(html);
+            }
+            
+      
+            console.log(html)
         }
     })
 
@@ -163,6 +181,36 @@ $(document).ready(function () {
         $("h5").html("(알수없는 사용자)")
         
     }
+
+    //댓글입력창
+    
+    $("#replySubmit").on("click",function(){
+
+        var reply = $("textarea").val();
+        var idx = $("#sessionIdx").html();
+
+        $.ajax({
+            type:"POST",
+            url:"http://13.125.149.206/api/feedReply/"+user_Idx,
+            data:{
+                USER_IDX:idx,
+                CONTENT: reply
+            },
+            success:function(res){
+
+                alert("댓글등록완료")
+                window.location.href=window.location.href
+
+
+            },
+    
+            
+
+        })
+
+
+
+    })
 
 
 

@@ -39,13 +39,41 @@
                     </div>
 
                     <div class="feedLikeCount"></div>
-                    <p style="display: none;"><%= idx %></p>
+                    <p style="display: none;" id="sessionIdx"><%= idx %></p>
 
                 </div>
 
                 <div class="feedBox" style="overflow: auto; max-height: 250px;">
                     <hr style="background:rgba(128, 128, 128, 0.089); width:100% ;margin-top:10px; border:0; height: 1px;  ">
-                    댓글자리</div>
+                    <div class="feedreply">
+                        <div class="feedUserId">
+                            <div class="feedloginimg" style="width: 30px; height: 30px;" >
+                                <img id="feeduserImg" onerror="this.onerror=null; this.src='/img/not.png';" src="<%= path %>">
+        
+                            </div>
+                            <span style="margin:10px 0 0 10px;"><p>닉네임</p></span>
+                        </div>
+                       
+
+                        <div class="Usercomment">
+                            <span class="reply">
+                                    <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우나라만세ㄷ라ㅓㅇ런;리ㅏ얼;ㄴ이ㅏ런;ㅣ아런;ㅣ아ㅓㄹㄴ;ㅣ아러;니ㅏ얼;니ㅏ얼;ㄴ아ㅣ런;ㅣ아러니ㅏㅇ;렁니;ㅏ런이ㅏ;ㄹㅇㄴ;ㅓㅣㅏ</p>
+                            </span>
+                        
+                      
+                            <i class="far fa-edit"></i>
+                            <i class="far fa-trash-alt"></i>
+                        </div>
+
+                       
+                     
+                    </div>
+                    
+                    
+                    
+                    
+                
+                </div>
                 <div class="feedBox">
                     <div class="feedloginimg" style="width: 45px; height: 45px;" >
                         <img id="loginImg" onerror="this.onerror=null; this.src='/img/not.png';" src="<%= path %>">
@@ -53,7 +81,7 @@
                     </div>
                     <div class="comment">
                         <textarea></textarea>
-                        <button type="submit">게시</button>
+                        <button type="submit" id="replySubmit">게시</button>
                     </div>
                 </div>
 
