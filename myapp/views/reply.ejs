@@ -1,0 +1,107 @@
+<!-- 피드클릭시 상세피드페이지 -->
+<!DOCTYPE html>
+<html lang="ko">
+<% include ./head.ejs %>
+
+<body>
+
+    <!-- 피드쓰기 -->
+
+    <div class="feedmodal">
+        <button type="button" id="close_btn" onclick="goBack()"></button>
+
+        <div class="feed">
+            <div class="feed_Content">
+                <div class="feedBox" >
+                    <img id="feedphoto" onerror="this.onerror=null; this.src='/img/feedup.png';" src="/img/feedup.png">
+                </div>
+                <div class="feedBox">
+                    <div class="feedloginimg">
+                        <a href=""><img id="loginImg" onerror="this.onerror=null; this.src='/img/not.png';"
+                                src="#"></a>
+
+                    </div>
+                    <h5 style="font-size: 1.5rem; color: rgba(22, 21, 22, 0.541)"></h5>
+                </div>
+
+                <div class="feedBox" id="content" style="overflow: auto; height: 100%;"> </div>
+                <div class="feedBox" id="feed_like" style="display: inline-block;">
+
+                    <a href="#" id="feed_edit"><span id="feededitbtn" ><i class="fas fa-user-edit" ></i></span></a>
+<!-- 
+                    <div class="feedlike">
+                        <div class="dislike">
+                            <i class="far fa-heart" id="dislike"></i>
+                        </div>
+                        <div class="like">
+                            <i class="fas fa-heart" id="like" style="display:none;"></i>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="feedLikeCount"></div> -->
+                    <p style="display: none;" id="sessionIdx"><%= idx %></p>
+                    <!-- <span class="edit"><i class="far fa-edit" id="i_edit"></i><p>댓글수정</p></span> -->
+                </div>
+                <hr style="background:rgba(128, 128, 128, 0.089); width:100% ;margin-top:10px; margin-bottom: 10px; border:0; height: 1px;  ">
+                <div class="feedBox" style="overflow: auto; max-height: 250px;">
+
+
+                    <div class="feedreply">
+                        <!-- <div class="feedUserId">
+                            <div class="feedloginimg small" >
+                                <img id="feeduserImg" onerror="this.onerror=null; this.src='/img/not.png';" src="<%= path %>">
+        
+                            </div>
+                            <span class="reply_user"><p>닉네임</p></span>
+                            <span class="edit"><i class="far fa-edit" id="i_edit"></i></span>
+                            <i class="far fa-trash-alt" id="i_delete"></i>
+                        </div>
+                       
+
+                        <div class="Usercomment">
+                            <span class="reply">
+                                    <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우나라만세ㄷ라ㅓㅇ런;리ㅏ얼;ㄴ이ㅏ런;ㅣ아런;ㅣ아ㅓㄹㄴ;ㅣ아러;니ㅏ얼;니ㅏ얼;ㄴ아ㅣ런;ㅣ아러니ㅏㅇ;렁니;ㅏ런이ㅏ;ㄹㅇㄴ;ㅓㅣㅏ</p>
+                            </span>
+                        
+                      
+
+                        </div> -->
+
+                       
+                     
+                    </div>
+                    
+                    
+                    
+                    
+                
+                </div>
+                <div class="feedBox">
+                    <!-- <div class="feedloginimg" style="width: 45px; height: 45px;" >
+                        <img id="loginImg" onerror="this.onerror=null; this.src='/img/not.png';" src="<%= path %>">
+
+                    </div> -->
+              
+                        <!-- <textarea></textarea>
+                        <button type="submit" id="replySubmit">게시</button> -->
+
+                    <button type="submit" id="replyEdit">수정완료</button>
+                
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+
+        <% include ./header.ejs %>
+
+        <div class="container"></div>
+
+    </div>
+</body>
+
+<script src="/js/feed.js" type="text/javascript"></script>
+
+</html>

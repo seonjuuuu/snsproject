@@ -86,17 +86,19 @@ $(document).ready(function(){
     })
   }
 
+
   function getPagingBtn (pageCnt) {
     $('.paging').empty();
     for (let i =0; i < pageCnt; i++) {
         let cnt = i + 1;
-        let prev = '<div class="direction prev">이전</a>'
-        let pBtn = '<div class="pBtn">'+cnt+'</a>'
-        let next = '<div class="direction next">다음</a>'
+        let prev = '<div class="direction prev">이전</div>'
+        let pBtn = '<div class="pBtn ">'+cnt+'</div>'
+        let next = '<div class="direction next">다음</div>'
 
         if (i == 0) {
             $('.paging').append(prev);
             $('.paging').append(pBtn);
+            $('.pBtn').addClass("strong");
         } else if (i == pageCnt - 1) {
             $('.paging').append(pBtn);
             $('.paging').append(next);
@@ -132,6 +134,7 @@ $(document).ready(function(){
             alert('다음 페이지가 없습니다')
         } else {
             pageNum = pageNum + 1;
+            getUserFeed(pageNum)
         }
         getUserFeed(pageNum)
     })

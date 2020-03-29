@@ -39,6 +39,8 @@ $(document).ready(function () {
             var feedUserIdx=result.USER_IDX;
             var feedIdx=result.IDX;
 
+            console.log
+
             $.ajax({
                 type:"GET",
                 url:"http://13.125.149.206/api/user/"+feedUserIdx,
@@ -89,7 +91,7 @@ $(document).ready(function () {
     
     $.ajax({
         type:"GET",
-        url:"http://13.125.149.206/api/feedReply?feedIdx="+user_Idx,
+        url:"http://13.125.149.206/api/feedReply?useridx="+user_Idx,
         async:false,
         success:function(res){
 
@@ -108,34 +110,18 @@ $(document).ready(function () {
                     success:function(res){
 
                         // console.log("res___",resIdx)
-                        console.log("res", res)
-
-                        console.log("reeesss",res.result[0].IDX)
-
-                        var move = res.result[0].IDX
+                        console.log("res",)
     
                         // var html = "<div class ='feedUserId'><div class='feedloginimg small'><img id='feeduserImg' src='"+res.result[0].PATH+"'></div><span class='reply_user'><p>"+res.result[0].NAME+"</p></span><i class='far fa-edit' id='i_edit'></i><i class='far fa-trash-alt' id='i_delete'></i><p class='replyid'>"+res.result[0].IDX+"</p></div>"
                     
-                        if(resIdx == idx){
+                        // if(resIdx == idx){
                             
-                            var html = "<div class ='feedUserId'>"
-                            +"<div class='feedloginimg small'>"
-                            +"<img id='feeduserImg' src='"+res.result[0].PATH+"'></div>"
-                            +"<span class='reply_user'><p>"+res.result[0].NAME+"</p>"
-                            +"</span><span class='editreply'><i class='far fa-edit' id='iedit'></i></span><span class='delete'><i class='far fa-trash-alt' id='idelete'></span></i>"
-                            +"<input type ='button' id='replyidx' name ='rebtn' value='"+i+"'>"+replyIdx+"</p></div>"
+                        //     var html = "<div class ='feedUserId'><div class='feedloginimg small'><img id='feeduserImg' src='"+res.result[0].PATH+"'></div><span class='reply_user'><p>"+res.result[0].NAME+"</p></span><span class='editreply'><i class='far fa-edit' id='iedit'></i></span><span class='delete'><i class='far fa-trash-alt' id='idelete'></span></i><p class='replyidx'>"+replyIdx+"</p></div>"
 
-                        }else{
+                        
+                            var html = "<div class ='feedUserId'><div class='feedloginimg small'><a href='/feedprofile?userIdx="+res.result[0].IDX+"'><img id='feeduserImg' src='"+res.result[0].PATH+"'><a></div><span class='reply_user'><a href='/feedprofile?userIdx="+res.result[0].IDX+"'><p>"+res.result[0].NAME+"</p></a></span></div>"
 
-                            
-                        var html = "<div class ='feedUserId'>"
-                        +"<a href='/feedprofile?userIdx="+move+"'><div class='feedloginimg small'><img id='feeduserImg' src='"+res.result[0].PATH+"'><a></div>"
-                        +"<span class='reply_user'><a href='/feedprofile?userIdx="+move+"'><p>"+res.result[0].NAME+"</p></a></span></div>"
-
-                        }
-
-                            console.log(move)
-                    
+                        
 
                         
                   
@@ -171,39 +157,14 @@ $(document).ready(function () {
 
 //수정, 삭제버튼
 
-    $(document).on("click","input[name='rebtn']",function(){
-   
-        // $("input[name='rebtn']").each(function (i) {
-        //     //alert( i +  $("input[name='EMAIL']").eq(i).attr("value") );
-        //     // var idx= $(".replyidx").eq(i).attr("value");
-        //     // console.log(idx)
-        //     var c = new Array;
-        //     var p = $("input[name='rebtn']").eq(0).attr("value");
-        //     console.log(p)
-        //     console.log(p.length)
-           
-        //     console.log(c)
-        // });
+    // $(".editreply").on("click",function(){
+    // var textarea = $(".reply").html()
+    // $("#replySubmit").css("display","none")
+    // $("#replyEdit").css("display","inline-block")
+    // $('textarea').html(textarea)
 
-    //    var p = $(".replyidx").text();
-    //    console.log(p)
-
-    })
-   
-
-    // $(".replyidx").each(function(idx){   
-         
-    //     // 해당 체크박스의 Value 가져오기
-    //     var value = $(this).val();
- 
-    //     // var eqValue = $(".replyidx:"+ idx + ").val() ;
-         
-    //     console.log(value + ":") ;
-         
-    //   });
-       
-
-
+    
+    // })
 
     //     $("#idelete").on("click",function(){
     //         var idx = $(".replyidx").html();
@@ -232,7 +193,7 @@ $(document).ready(function () {
 
 
     $(".edit").on("click",function(){
-        window.location.assign('/mainpage/reply?IDX='+user_Idx)
+        window.location.assign('/mainpage/reply?'+user_Idx)
     })
 
 
