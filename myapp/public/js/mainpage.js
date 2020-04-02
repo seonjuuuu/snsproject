@@ -86,6 +86,7 @@ $(document).ready(function(){
     })
   }
 
+//피드 페이징 버튼 생성
 
   function getPagingBtn (pageCnt) {
     $('.paging').empty();
@@ -133,10 +134,13 @@ $(document).ready(function(){
         if (pageNum == pageCnt) {
             alert('다음 페이지가 없습니다')
         } else {
-            pageNum = pageNum + 1;
+            pageNum = pageNum*1 + 1;
+            $('.pBtn').removeClass('strong') ;
+            $('.pBtn').next('.pBtn').addClass('strong') 
+
             getUserFeed(pageNum)
         }
-        getUserFeed(pageNum)
+        // getUserFeed(pageNum)
     })
 }
 

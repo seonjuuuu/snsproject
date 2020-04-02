@@ -153,9 +153,10 @@
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
-    list-style: none;  
+    list-style: none;
+    
   }
-
+a:link {text-decoration: none;}
 
 body{
     margin: 0 auto;
@@ -844,7 +845,7 @@ button {
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    margin: 10px 3px 0 18px;
+    margin: 0px 5px 0 18px;
     color:rgb(184, 179, 179);
     /* background-color: black; */
     font-size: 100px;
@@ -1137,7 +1138,7 @@ dd{
     position: fixed;
     z-index:300;
     background-color: rgba(0, 0, 0, 0.747);
-    overflow:scroll;
+    overflow:auto;
     
  }
 
@@ -1207,7 +1208,7 @@ dd{
 }
 .comment>textarea{
     width: calc(100% - 60px);
-    height: calc(100% - 30px);
+    height: 36px;
 }
 .comment>button{
     width: 50px;
@@ -1347,6 +1348,12 @@ dd{
     display: flex;
     align-items:center;
     padding: 10px;
+    /* border: 1px solid black; */
+    margin:10px 20px;
+    border-radius:9.5px;
+    font-size: 15px;
+    background-color: rgba(177, 174, 174, 0.123);
+    display: inline-block;
 
 }
 .edit>i, .edit>p , .editreply , .delete {
@@ -1375,7 +1382,7 @@ dd{
 
 }
 .reply_user{
-    margin:10px 0 0 10px;
+    margin:0px 0 0 10px;
     color: rgba(39, 29, 29, 0.562);
 }
 .replyid{
@@ -1384,4 +1391,66 @@ dd{
 #replyEdit{
     display: none;
 }
+.feedUserId{
+    margin-top:5px;
+}
 
+.reply_user>a:link{color: rgba(39, 29, 29, 0.56);}
+.reply_user>a:visited{color: rgba(39, 29, 29, 0.56);}
+.reply_user>a:hover{color:gray}
+
+#replytext{
+    display: none;
+}
+
+.editmodal{
+    width: 300px;
+    z-index: 500;
+    height: 150px;
+    border: 1px solid #000;
+    margin: 0;
+    background-color: white;
+ 
+    
+
+}
+
+.edit_btn>button{
+    width: 70px;
+    margin: 0;
+}
+.edit_btn {
+    padding: 0 73px;
+    display: inline-block;
+}
+.editmodal>input{
+    display: block;
+    width: 80%;
+    height: 40px;
+    margin: 30px auto;
+   
+}
+.editmod{
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    
+}
+.idxComment{
+    height: 50px;
+    display: none;
+}
+.idxComment>input{
+    width: 60%;
+    height: 30px;
+    margin:0 3px 0 30px;
+}
+.idxComment>button{
+    width: 50px;
+    height: 30px;
+    border-radius: 0;
+    margin: 0;
+    transform:translateY(2px);
+}
