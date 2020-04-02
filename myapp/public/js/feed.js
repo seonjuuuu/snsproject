@@ -86,17 +86,22 @@ $(document).ready(function () {
                     success: function (result) {
                         var move = result.result[0].IDX;
                         // var html = "<div class ='feedUserId'><div class='feedloginimg small'><img id='feeduserImg' src='"+res.result[0].PATH+"'></div><span class='reply_user'><p>"+res.result[0].NAME+"</p></span><i class='far fa-edit' id='i_edit'></i><i class='far fa-trash-alt' id='i_delete'></i><p class='replyid'>"+res.result[0].IDX+"</p></div>"
+                        
+                        if ( ! result.result[0].PATH ){
+                            result.result[0].PATH = '/img/not.png'
+                        }
+
 
                         if (resIdx == idx) {
                             var html = "<div class ='feedUserId' data-idx='" + replyIdx + "'>"
                                 + "<div class='feedloginimg small'>"
-                                + "<img id='feeduserImg' src='" + result.result[0].PATH + "'></div>"
+                                + "<img id='feeduserImg' name='imguser'  src='" + result.result[0].PATH + "'></div>"
                                 + "<span class='reply_user'>" + result.result[0].NAME + "</span>"
                                 + "<span class='editreply'><i class='far fa-edit' name='iedit' data-idx='" + replyIdx + "'></i></span><span class='delete'><i class='far fa-trash-alt' name='idelete' data-idx='" + replyIdx + "'></span></i>"
                                 // + "<input type ='button' id='replyidx' name ='rebtn' value='" + i + "'>" + replyIdx + "</p></div>";
                         } else {
                             var html = "<div class ='feedUserId'>"
-                                + "<a href='/feedprofile?userIdx=" + move + "'><div class='feedloginimg small'><img id='feeduserImg' src='" + result.result[0].PATH + "'></a></div>"
+                                + "<a href='/feedprofile?userIdx=" + move + "'><div class='feedloginimg small'><img id='feeduserImg' name='imguser' src='" + result.result[0].PATH + "'></a></div>"
                                 + "<span class='reply_user'><a href='/feedprofile?userIdx=" + move + "'><p>" + result.result[0].NAME + "</p></a></span></div>"
 
                         }
@@ -105,11 +110,19 @@ $(document).ready(function () {
                 });
 
                 var html = "<div class='Usercomment'>" + res.result[i].CONTENT + "</div>"
-                +"<div class='idxComment'><input type='text' name = 'idxEdit' value=''><button type='button' name='idxEdit_btn'>수정</button></div>";
+                +"<div class='idxComment'><input type='text' name = 'idxEdit'  ><button type='button' name='idxEdit_btn'>수정</button></div>";
                 $(".feedreply").append(html);
+
+             
             }
         }
     });
+
+    // if($('[name=imguser]').attr('scr') === null){
+    //     $('[name=imguser]').attr('src','/img/not.png')
+
+    // }
+    
 
     //수정, 삭제버튼
     // $(document).on("click", "input[name='rebtn']", function () {
@@ -149,34 +162,35 @@ $(document).ready(function () {
         $(this).parents('.feedUserId').next('.Usercomment').next('.idxComment').css("display",'block')
      
   
-        console.log($(this).parents('.feedUserId').next('[name=idxEdit]').val());
+        console.log($(this).parents('.feedUserId').next('.Usercomment').next('.idxComment').children('input[name=idxEdit]').val());
         // $("#replySubmit").hide();
         // $("#replyEdit").show();
         // var user_reply = $(this).parents('.feedUserId').next('.Usercomment').html();
         // $('textarea').text(user_reply);
 
-        var content=$(this).parents('.feedUserId').next('.idxComment').next('input').val();
+        var content=$(this).parents('.feedUserId').next('.Usercomment').next('.idxComment').children('input').val();
    
         var this_idx =$(this).attr('data-idx');
         // console.log(idx)
-
+        var c = $(this).parents('.feedUserId')
 
         $("[name=idxEdit_btn]").on('click',function(){
             
-            var useridx = $('#sessionIdx').text()
+            var useridx = $('#sessionIdx').text();
           
-            console.log(this_idx)
+            // console.log(this_idx)
            
         
-            console.log(useridx)
+            console.log(content)
     
             $.ajax({
                 type:"PUT",
                 url:"http://13.125.149.206/api/feedReply/"+this_idx,
                 data:{
                     USER_IDX:useridx,
-                    CONTENT:'알라뷰'
+                    CONTENT:content
                 },
+                
                 success:function(res){
                     alert("수정완료") ;
                     window.location.href=window.location.href
@@ -188,6 +202,7 @@ $(document).ready(function () {
     
                 
             })
+            console.log(content)
         })
     
    
@@ -196,9 +211,9 @@ $(document).ready(function () {
 
 
     $("[name=idelete]").on("click", function () {
-        console.log($(this).attr('data-idx'));
+        // console.log($(this).attr('data-idx'));
         var idx = $(this).attr('data-idx');
-        var useridx = $('#sessionIdx').text();
+        var useridx = $('#sessionIdx').html();
 
         console.log(useridx)
         console.log(idx)

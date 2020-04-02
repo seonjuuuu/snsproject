@@ -9,7 +9,8 @@
     /* 메인페이지  */
     .box{
      
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
     
     }
     .animation{
@@ -69,13 +70,18 @@
     .feedmodal>button{
         margin: 10px 0 90px  calc(100% - 40px);
     }
+    .feedbox ,.feedPlusbox {
+        width: 150px;
+        height: 150px;
+    }
+    
    
 }
 
 /* Tablet Device */
 @media all and (min-width:768px)  {
     .box{
-     
+        grid-gap: 20px;
         grid-template-columns: repeat(3, 1fr);
     }
     .animation{ display: inline-block;}
@@ -133,6 +139,10 @@
     margin: 10px 0 10px  calc(100% - 40px);
 }
 
+.feedbox ,.feedPlusbox {
+    width: 200px;
+    height: 200px;
+}
 
 
     
@@ -494,7 +504,7 @@ button {
 .content{
     position: relative;
     min-height: 458px;
-    padding:30px;
+    /* padding:30px; */
 }
 .area { 
     /* 내용 가운데정렬 */ 
@@ -678,12 +688,12 @@ button {
     justify-content: center; */
     display:grid;
     /* grid-template-columns: repeat(3, 1fr); */
-    grid-gap: 20px;
+    /* grid-gap: 20px; */
 }
 
 .feedbox , .feedPlusbox {
-    width: 200px;
-    height: 200px;
+    /* width: 200px;
+    height: 200px; */
     background-color: rgba(255, 255, 255, 0.452);
     /* border: 1px solid black; */
     border-radius: 10px;
@@ -1157,7 +1167,7 @@ dd{
      /* display:grid; */
      grid-template-columns: repeat(2, 1fr);
      grid-template-rows: 80px 130px 30px 10px 250px 80px;
-     margin: 0 20px 20px 10px;
+     margin: 0 1px 10px 1px;
 
 
  }
