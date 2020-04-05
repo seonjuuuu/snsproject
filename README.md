@@ -365,6 +365,7 @@
       }
     ```
 <img src="https://user-images.githubusercontent.com/62421526/78466275-4523bd00-773a-11ea-8a63-95332a65a1ec.PNG" width="400px">
+
 ```
 * 댓글 입력창에 로그인된 user의 photo를 보여준다.
 * 댓글 input창을 통해 value값을 입력받아 ajax POST를 보내 댓글을 서버로 보내준다.
