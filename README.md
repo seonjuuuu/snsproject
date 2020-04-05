@@ -392,7 +392,7 @@
     * 쿼리스트링을 이용해 feed IDX값을 받아와 api를 호출, result를 화면에 보여준다
     ```javascript
       
-      //feed?IDX=(idx) 피드idx값을 부여해 가져온다
+      //feed?IDX=(idx) 피드idx값을 부여해 가져오는 
       
       function getUrlParams() {
       var params = {};
