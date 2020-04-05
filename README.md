@@ -179,31 +179,40 @@
 
 * 사이트 저장된 모든 피드 21개씩 paging
 
-<img src="https://user-images.githubusercontent.com/62421526/78465587-8f08a500-7732-11ea-91a0-5db889ea3695.PNG" width="600px" height="500px">
+<img src="https://user-images.githubusercontent.com/62421526/78465587-8f08a500-7732-11ea-91a0-5db889ea3695.PNG" width="400px" height="300px">
 
 * feed click 시 feed 상세 페이지로 이동
 
-<img src="https://user-images.githubusercontent.com/62421526/78465598-be1f1680-7732-11ea-92b1-ae9aaabbf4b8.PNG" width="600px" height="500px">
+<img src="https://user-images.githubusercontent.com/62421526/78465598-be1f1680-7732-11ea-92b1-ae9aaabbf4b8.PNG" width="400px" height="300px">
 
 * write button 클릭시 feedwrite modal 창을 보여준다
 
-<img src="https://user-images.githubusercontent.com/62421526/78465609-f6bef000-7732-11ea-9e47-cff8184234d6.PNG" width="600px" height="500px">
+<img src="https://user-images.githubusercontent.com/62421526/78465609-f6bef000-7732-11ea-9e47-cff8184234d6.PNG" width="400px" height="300px">
 
-    * 현재 로그인 된 사용자 사진과 닉네임을 보여준다 ("(사용자닉네임)님 당신의 이야기를 보여주세요")
-    * 사진 입력 - 사진 미리보기 가능
-    * textarea를 통해서 feedcontent 입력
-    * submit으로 ajax를 이용해 서버에 POST후 /profile 이동. 
-    * X 버튼을 누르면 feedwrite 창을 hidden 시킨다
+   * 현재 로그인 된 사용자 사진과 닉네임을 보여준다 ("(사용자닉네임)님 당신의 이야기를 보여주세요")
+   * 사진 입력 - 사진 미리보기 가능
+   * textarea를 통해서 feedcontent 입력
+   * submit으로 ajax를 이용해 서버에 POST후 /profile 이동. 
+   * X 버튼을 누르면 feedwrite 창을 hidden 시킨다
 
 * hambuger menu 버튼
 
-    * input type = button 과 label을 이용해서 버튼 생성 , 클릭시 nav메뉴 show 
-    * 현재 로그인된 사용자 이름을 보여준다 
-    * HOME button - /mainpage 이동
-    * 회원정보 button - /editinfo  이동
-    * 이용약관 button - /mainpage/service 이동
-    * 개인정보 취급방침 button - /mainpage/sns 이동
-    * 로그아웃 button - session 삭제, index로 이동
+<img src="https://user-images.githubusercontent.com/62421526/78465676-9a100500-7733-11ea-8db3-ad685d085aeb.PNG" width="400px" height="300px">
+
+
+   * input type = button 과 label을 이용해서 버튼 생성 , 클릭시 nav메뉴 show 
+   * 현재 로그인된 사용자 이름을 보여준다 
+   * HOME button - /mainpage 이동
+   * 회원정보 button - /editinfo  이동
+   * 이용약관 button - /mainpage/service 이동
+   * 개인정보 취급방침 button - /mainpage/sns 이동
+   * 로그아웃 button - session 삭제, index로 이동
+   ```javascript
+   router.get('/logout', function(req, res, next) {
+  req.session.destroy();
+  res.redirect('/')
+});
+   ```
 
 * 현재 로그인된 사용자 프로필 사진
     * click 시 /profile 이동
