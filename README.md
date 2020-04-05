@@ -216,6 +216,9 @@
 
 * 사이트 저장된 모든 피드 21개씩 paging
 
+
+<img src="https://user-images.githubusercontent.com/62421526/78465587-8f08a500-7732-11ea-91a0-5db889ea3695.PNG" width="400px" height="300px">
+
 ```javascript
 
   let pageNum=1;
@@ -303,7 +306,6 @@
 
 ```
 
-<img src="https://user-images.githubusercontent.com/62421526/78465587-8f08a500-7732-11ea-91a0-5db889ea3695.PNG" width="400px" height="300px">
 
 * feed click 시 feed 상세 페이지로 이동
 
