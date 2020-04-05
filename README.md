@@ -14,20 +14,15 @@
       json: data
   }, (error, response, body) => {
       if (!error && response.statusCode === 200) {
-        // console.log(request.session.user)
-        // console.log('session', req.session)
-        // console.log(response.body)
-        
        
         let loginUser= response.body.login
-        // console.log(req.session.user)
         
         req.session.IDX = loginUser.IDX;
         req.session.EMAIL = loginUser.EMAIL;
         req.session.NAME = loginUser.NAME;
         req.session.INTRODUCE = loginUser.INTRODUCE;
         req.session.PATH= loginUser.PATH;
-        // console.log(req.session)
+        
         res.send("true")
       } else {
           res.send("false")
