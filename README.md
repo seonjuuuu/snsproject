@@ -200,13 +200,13 @@
 <img src="https://user-images.githubusercontent.com/62421526/78465676-9a100500-7733-11ea-8db3-ad685d085aeb.PNG" width="400px" height="300px">
 
 
-   * input type = button 과 label을 이용해서 버튼 생성 , 클릭시 nav메뉴 show 
-   * 현재 로그인된 사용자 이름을 보여준다 
-   * HOME button - /mainpage 이동
-   * 회원정보 button - /editinfo  이동
-   * 이용약관 button - /mainpage/service 이동
-   * 개인정보 취급방침 button - /mainpage/sns 이동
-   * 로그아웃 button - session 삭제, index로 이동
+      * input type = button 과 label을 이용해서 버튼 생성 , 클릭시 nav메뉴 show 
+      * 현재 로그인된 사용자 이름을 보여준다 
+      * HOME button - /mainpage 이동
+      * 회원정보 button - /editinfo  이동
+      * 이용약관 button - /mainpage/service 이동
+      * 개인정보 취급방침 button - /mainpage/sns 이동
+      * 로그아웃 button - session 삭제, index로 이동
    ```javascript
    router.get('/logout', function(req, res, next) {
   req.session.destroy();
@@ -215,6 +215,8 @@
    ```
 
 * 현재 로그인된 사용자 프로필 사진
+<img src="https://user-images.githubusercontent.com/62421526/78465703-01c65000-7734-11ea-9f99-2f87e5e0b831.PNG" width="400px" height="300px">
+
     * click 시 /profile 이동
     * 내가 작성한 feed sort
 
