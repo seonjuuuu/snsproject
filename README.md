@@ -389,12 +389,15 @@
     })
 ```
 <img src="https://user-images.githubusercontent.com/62421526/78466216-a0a17b00-7739-11ea-8a18-5c75362e797f.PNG" width="600px">
+
 ```
 * 좋아요 버튼/ 좋아요 갯수
 * 피드가 현재 로그인한 유저와 같으면 수정할수 있는 아이콘 생성
 ```
+
 * 댓글 수정 및 삭제
 <img src="https://user-images.githubusercontent.com/62421526/78466292-73090180-773a-11ea-95e0-0c7a27c6e9b9.PNG" width="600px">
+
 ```
 * 내가쓴 댓글은 수정.삭제 버튼 생성
 * 수정버튼을 누르면 input창 생성
