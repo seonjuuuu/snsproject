@@ -1,8 +1,8 @@
 # SNS PROJECT - "TOCTOC"
 
 * html, css, javascript , node-js express 를 이용
-* 프론트앤드 작업
-* 백앤드 개발자와 협업하였습니다
+* 프론트앤드 작업 (me)
+* 백앤드 개발자와 협업
 
 ## 페이지 구현
 ### 1. index (로그인) 페이지 구현
