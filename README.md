@@ -2,6 +2,9 @@
 ## 페이지 구현
 ### 1. index (로그인) 페이지 구현
 
+![메인2](https://user-images.githubusercontent.com/62421526/78464782-67acda80-7728-11ea-936b-895d03cc1bf5.PNG)
+
+
 * 이메일 주소, 비밀번호 입력
 * 서버에 저장된 session을 통해서 로그인 유지
 
