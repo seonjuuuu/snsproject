@@ -414,19 +414,52 @@
 * 수정시 비밀번호는 필수로 값을 입력 받는다
 * 카메라 버튼 클릭시, 사진 입력 가능
 * 휴지통 버튼 클릭시, 이미지 삭제 가능
+```javascript
+    //프로필 사진 삭제버튼
+     $("#delete").on("click",function(e){
+        $("#proImg").attr('src','')
+    })
+```
 * 탈퇴 button 클릭시 - 회원의 모든 정보 삭제
 
+```javascript
+//탈퇴 ajax
+
+$("#deletebtn").on("click",function(e){
+ 
+
+    if(confirm("정말로 탈퇴하시겠습니까?")){ 
+        $.ajax({
+            type:"DELETE",
+            url:"/deleteEdit",
+    
+            success:function(res){
+                if(res==="true"){
+                    alert("탈퇴되셨습니다")
+                
+                window.location.assign("/")
+            
+                }else if( res === "false"){
+                    alert("에러발생")
+               
+                }
+                else{}
+            }
+        })
+       
+    }
+
+})
+```
+
 ### 7. /feededit (피드 수정)페이지 구현
+
+<img src="https://user-images.githubusercontent.com/62421526/78466423-ed865100-773b-11ea-8cf6-ffada499bf1c.PNG" width="600px" heigth="400">
 
 * 피드의 사진값, 유저의 프로필을 뿌려준다.
 * textarea로 글씨 수정할수 있는 수정페이지를 바꿔준다.
 * 수정버튼 / 삭제 버튼 활성화 시킨다
 
-### 8. 댓글창 구현
-
-* 댓글을 입력했을때 현재 로그인한 유저와 댓글 입력한 유저의 값이 같으면 수정, 삭제 버튼을 보여준다
-* 수정버튼을 눌렀을때 input창을 보여준다
-* input창을 없애기 위해서 댓글수정취소버튼을 누르면 현재페이지가 리로드 된다
 
 ## 문제 해결
 ### 2020-03-25
