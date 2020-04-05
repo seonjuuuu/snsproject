@@ -175,7 +175,10 @@
 
 ### 3. /mainpage(첫화면) 구현
 
-* 사이트 저장된 모든 피드 6개씩 paging
+<img src="https://user-images.githubusercontent.com/62421526/78465577-5bc61600-7732-11ea-8ac3-60e5e8a03104.PNG" width="600px" height="400px"> 
+
+
+* 사이트 저장된 모든 피드 21개씩 paging
 
 * feed click 시 feed 상세 페이지로 이동
 
