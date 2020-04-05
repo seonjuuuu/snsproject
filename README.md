@@ -8,7 +8,7 @@
 * 이메일 주소, 비밀번호 입력
 * 서버에 저장된 session을 통해서 로그인 유지
 
-```
+```javascript
 
   request.post(url, {
       json: data
