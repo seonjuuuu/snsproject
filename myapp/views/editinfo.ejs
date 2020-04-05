@@ -12,7 +12,7 @@
             <div class="content">
                 <div class="feed">
                     <div class="mainpage">
-                        <h2>회원정보수정</h2>
+                        <h1>회원정보수정</h1>
                         <input id="joinprofile" type="file" accept=".jpg,.png,.jpeg">
                         <div class="firstJoin">
                             <from name="join" method="post">
@@ -22,7 +22,7 @@
                                             <!-- <i class="fas fa-user-circle "></i> -->
                                         <!-- </div> -->
                                         <!-- <div class="preImg"> -->
-                                            <img id="proImg" onerror="this.src='/img/not.png';" src= "<%= path %>">
+                                            <img id="proImg" onerror="this.src='/img/not.png';" src= "<%= path %>" alt="프로필이미지">
                                         <!-- </div> -->
                                     </div>
                                        
@@ -40,7 +40,7 @@
                                 </div>
     
                                 <div class="edit">
-                                    <input type="text" id="name" placeholder="닉네임" value=<%= userName %> ><br>
+                                    <input type="text" id="name" placeholder="닉네임" value="<%= userName %>" ><br>
                                     <input type="password" id="password" placeholder="password (최소 8글자이상)" maxlength="20" required  ><br>
                                     <input type="password" id="repassword" placeholder="password 확인" maxlength="20" required ><br>
                                     <input type="text" id="introDuce" placeholder="한줄 자기소개" value="<%= introDuce %>" >

@@ -74,9 +74,9 @@ router.get('/feed', function(req, res, next) {
     res.render('service', { title: 'profile', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH, email:req.session.EMAIL, idx:req.session.IDX });
   });  
 
-  router.get('/reply', function(req, res, next) {
-    res.render('reply', { title: 'profile', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH, email:req.session.EMAIL, idx:req.session.IDX });
-  });  
+  // router.get('/reply', function(req, res, next) {
+  //   res.render('reply', { title: 'profile', userName: req.session.NAME, introDuce: req.session.INTRODUCE, path: req.session.PATH, email:req.session.EMAIL, idx:req.session.IDX });
+  // });  
 
 
 

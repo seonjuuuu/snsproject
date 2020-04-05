@@ -56,6 +56,8 @@ $(document).ready(function () {
             })
 
 
+            // 글쓰기 모달창 버튼 클릭 ajax 
+
             $('#feedupbtn').on("click", function (e) {
 
                 let content = $("#feedcontent").val();

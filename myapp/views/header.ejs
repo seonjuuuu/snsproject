@@ -13,8 +13,8 @@
         <a href="/mainpage"><img src="/img/logoname.svg" alt="로고이미지" width="200"></a>
     </div>
     <div class="loginimg">
-            <h6 style="display:none" class="loginidx"><%= idx %></h6>
-            <a href="/feedprofile?userIdx=<%= idx %>"><img id="loginImg" style="display: block; width: 100%; height: 100%;" onerror="this.src='/img/not.png';" src= "<%= path %>"></a>
+            <p style="display:none" class="loginidx"><%= idx %></p>
+            <a href="/feedprofile?userIdx=<%= idx %>"><img id="loginImg" style="display: block; width: 100%; height: 100%;" onerror="this.src='/img/not.png';" src= "<%= path %>" alt="로그인유저프로필"></a>
            
     </div>
    
@@ -25,7 +25,7 @@
     <div class="menuarea">
 
         <h1>MENU</h1>
-        <h5><span style="font-size: large; color: purple;"><%= userName %></span>님 반갑습니다</h5>
+        <h2><span style="color: purple;"><%= userName %></span>님 반갑습니다</h2>
         <ul class="areamenu">
 
             <li><a href="/mainpage">HOME</a></li>

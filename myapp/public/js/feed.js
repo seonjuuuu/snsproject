@@ -154,6 +154,9 @@ $(document).ready(function () {
 
     //   });
 
+
+    // 수정버튼 눌렀을때 
+
     $('[name=iedit]').on('click', function () {
         // $('.editmod').show();
        
@@ -168,17 +171,16 @@ $(document).ready(function () {
         // var user_reply = $(this).parents('.feedUserId').next('.Usercomment').html();
         // $('textarea').text(user_reply);
 
-        var content=$(this).parents('.feedUserId').next('.Usercomment').next('.idxComment').children('input').val();
+        // var content=$(this).parents('.feedUserId').next('.Usercomment').next('.idxComment').children('input').val();
    
         var this_idx =$(this).attr('data-idx');
         // console.log(idx)
-        var c = $(this).parents('.feedUserId')
+        // var c = $(this).parents('.feedUserId')
 
         $("[name=idxEdit_btn]").on('click',function(){
             
             var useridx = $('#sessionIdx').text();
-          
-            // console.log(this_idx)
+            const content = $(this).parent().find('[name=idxEdit]').val();
            
         
             console.log(content)
@@ -208,7 +210,7 @@ $(document).ready(function () {
    
     });
      
-
+    //삭제버튼 
 
     $("[name=idelete]").on("click", function () {
         // console.log($(this).attr('data-idx'));
@@ -238,6 +240,7 @@ $(document).ready(function () {
         })
     });
 
+    //댓글 수정버튼 클릭시 리로드
 
     $(".edit").on("click", function () {
     //     $('textarea').empty();
@@ -252,7 +255,10 @@ $(document).ready(function () {
     //     $(".editmod").css('display','none')
     // })
 
-    //좋아요버튼
+
+
+
+    //좋아요버튼 눌렀을때 ajax호출
     $("#dislike").on("click", function () {
         $.ajax({
             type: "GET",
@@ -274,7 +280,7 @@ $(document).ready(function () {
         });
     });
 
-    //싫어요버튼
+    //싫어요버튼 눌렀을때 ajax 호출
     $("#like").on("click", function () {
         $.ajax({
             type: "GET",
@@ -296,24 +302,26 @@ $(document).ready(function () {
         });
     });
 
+    //회원정보는 알수 없는 경우 
+
     if ($("h5").html(null)) {
         $("h5").html("(알수없는 사용자)")
     }
 
-    //댓글입력창
-    $("#replySubmit").on("click", function () {
-        var reply = $("textarea").val();
+    //댓글입력창 ajax 호출
+    // $("#replySubmit").on("click", function () {
+    //     var reply = $("textarea").val();
 
-        $.ajax({
-            type: "POST",
-            url: "http://13.125.149.206/api/feedReply/" + user_Idx,
-            data: {
-                USER_IDX: idx,
-                CONTENT: reply
-            },
-            success: function (res) {
-                window.location.href = window.location.href;
-            },
-        });
-    });
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "http://13.125.149.206/api/feedReply/" + user_Idx,
+    //         data: {
+    //             USER_IDX: idx,
+    //             CONTENT: reply
+    //         },
+    //         success: function (res) {
+    //             window.location.href = window.location.href;
+    //         },
+    //     });
+    // });
 });

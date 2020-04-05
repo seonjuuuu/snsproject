@@ -122,6 +122,7 @@
  
 
 
+
  //수정 ajax
 
 $("#editbtn").on("click",function(e){
@@ -143,6 +144,8 @@ $("#editbtn").on("click",function(e){
         $("#password").focus();
         return;
     } 
+
+    
 
 // img클릭시 반환값이 없을때
 

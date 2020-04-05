@@ -68,7 +68,7 @@
 
 
 
-       //등록창 오류확인
+       //등록창 오류확인 
        $("#nextbtn").on("click", function (e) {
            var email = $("#email").val();
            var name = $("#name").val();
@@ -112,7 +112,8 @@
 
        })
 
-       //API 호출 
+       //회원정보 API 호출
+
        $("#joinbtn").on("click",function(e){
            var email = $("#email").val();
            var name = $("#name").val();
@@ -167,7 +168,8 @@
 
 
 
-    //프로필 사진 미리보기
+    
+       //프로필 사진 미리보기
 
 
     function readURL(input) {
@@ -232,6 +234,10 @@
     // }
 
 
+
+
+
+
     // //axios 방식
   
     if(document.getElementById("joinprofile").files.length >= 1){
@@ -294,7 +300,10 @@
 // });     // 공부해 보기 
 
 
-//키버튼 제어 
+
+
+
+//키버튼 제어 -F5를 눌렀을때  
 $(document).keydown(function(e){
         if(event.keyCode == '116'){
             if(confirm("F5을 누르면 초기화됩니다")){

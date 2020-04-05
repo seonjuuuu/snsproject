@@ -251,10 +251,11 @@ button {
 
     
 }
-.mainpage>h2 {
+.mainpage>h1 {
     margin-bottom: 40px;
     /* font-family: 'Gothic A1', sans-serif; */
-    color: rgb(95, 95, 95);
+    color: #5f5f5f;
+    font-size: 25px;
 
 }
 
@@ -520,8 +521,9 @@ button {
     
     
 }
-.menuarea>h5{
+.menuarea>h2{
     margin-top:30px;
+    font-size: 20px;
 }
 
 
@@ -870,11 +872,12 @@ button {
     display: flex;
     margin-bottom: 30px;
 }
-.logoName>h5{
+.logoName>h1{
     display:inline-block;
     padding: 20px;
     width: 90%;
-    font-size: 30%;
+    font-size: 20px; 
+    color: rgb(158, 152, 158)
 }
 .feedUpimg {
     /* display: inline-block; */
@@ -1035,7 +1038,7 @@ textarea:focus{
     margin-bottom: 40px;
     line-height:150%;
 }
-.sns_feed>h2{
+.sns_feed h1 , .sns_feed h2{
     margin-bottom: 30px;
     margin-top:30px;
     color: rgb(104, 24, 90);

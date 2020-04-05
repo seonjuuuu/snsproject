@@ -86,7 +86,7 @@ $(document).ready(function () {
         }
     })
 
-    //피드모아보기
+    //피드모아서 화면에 보여주기  - 각각의 유저의 피드 모아보기 
     $.ajax({
         type:"GET",
         url:"http://13.125.149.206/api/feed?userIdx="+user_Idx,
@@ -112,7 +112,7 @@ $(document).ready(function () {
     })
 
 
-        //프로필편집, 글쓰기버튼 보이기
+        //프로필편집, 글쓰기버튼 보이기 - 사용자와 , 유저피드의 idx값이 일치하면 버튼생성
 
 
 
