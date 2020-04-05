@@ -95,7 +95,7 @@
 
            }
     ```
-    * 이메일 중복 alert("이메일 중복")
+    * 이메일 중복 
     ```javascript
               $.ajax({
             type:"GET",
@@ -113,7 +113,7 @@
       
         })
     ```
-    * 빈칸일 경우 alert("이메일을 입력해 주세요") 
+    * 빈칸일 경우  
     ```javascript
     if (!email) {
                alert("이메일을 확인해 주세요")
@@ -134,7 +134,7 @@
 
            }
    ```
-   * 비밀번호 확인창과 일치 하지 않을 경우 alert("비밀번호 불일치")\
+   * 비밀번호 확인창과 일치 하지 않을 경우 
  ```javascript
            $("#repassword").on("blur",function(e){
            let password = $("#password").val();
@@ -149,7 +149,7 @@
            }
        })
 ```
-  * 빈칸일 경우 alert("비밀번호를 입력해 주세요") 
+  * 빈칸일 경우 
  ```javascript
  if (!password) {
                alert("패스워드를 확인해 주세요")
