@@ -1,6 +1,6 @@
 # SNS PROJECT - "TOCTOC"
 
-* html, css, javascript , node-js express 를 이용
+* html, css, javascript , node express 를 이용
 * 프론트앤드 작업 (me)
 * 백앤드 개발자와 협업
 
