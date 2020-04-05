@@ -175,14 +175,20 @@
 
 ### 3. /mainpage(첫화면) 구현
 
-<img src="https://user-images.githubusercontent.com/62421526/78465577-5bc61600-7732-11ea-8ac3-60e5e8a03104.PNG" width="600px" height="400px"> 
-
+<img src="https://user-images.githubusercontent.com/62421526/78465577-5bc61600-7732-11ea-8ac3-60e5e8a03104.PNG" width="600px" height="500px"> 
 
 * 사이트 저장된 모든 피드 21개씩 paging
 
+<img src="https://user-images.githubusercontent.com/62421526/78465587-8f08a500-7732-11ea-91a0-5db889ea3695.PNG" width="600px" height="500px">
+
 * feed click 시 feed 상세 페이지로 이동
 
+<img src="https://user-images.githubusercontent.com/62421526/78465598-be1f1680-7732-11ea-92b1-ae9aaabbf4b8.PNG" width="600px" height="500px">
+
 * write button 클릭시 feedwrite modal 창을 보여준다
+
+<img src="https://user-images.githubusercontent.com/62421526/78465609-f6bef000-7732-11ea-9e47-cff8184234d6.PNG" width="600px" height="500px">
+
     * 현재 로그인 된 사용자 사진과 닉네임을 보여준다 ("(사용자닉네임)님 당신의 이야기를 보여주세요")
     * 사진 입력 - 사진 미리보기 가능
     * textarea를 통해서 feedcontent 입력
