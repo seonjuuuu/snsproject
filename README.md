@@ -70,19 +70,61 @@
     
 * 닉네임
 
-
-    * 빈칸일 경우 alert("닉네임을 입력해 주세요")
-        
-
-* 이메일 입력 
+    * 빈칸일 경우
+    ```javascript
+    if (!name) {
+               alert("닉네임을 확인해 주세요")
+               $("#name").focus();
+               return; }
+           
+    ```
+    * 이메일 입력 
     * 이메일 정규식 사용
-    * 이메일 형식이 아니면 alert("이메일이 형식에 맞지 않습니다")
+    ```javascript
+      var regExpEm = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+    ```
+    * 이메일 형식확인
+    ```javascript
+      if(email && !regExpEm.test(email)){
+               alert("이메일이 형식에 맞지 않습니다")
+               $(this).val('');
+               $("#email").val('');
+               $("#email").focus();
+               return;
+
+           }
+    ```
     * 이메일 중복 alert("이메일 중복")
+    ```javascript
+              $.ajax({
+            type:"GET",
+            url:"http://13.125.149.206/api/user/duplicate/"+email,
+        
+            success:function(res){
+                if( res.duplicateUser ){
+                    alert("이메일 중복")
+                    $("#email").focus();
+                } else {
+                    $(".secondJoin").show();
+                    $(".firstJoin").hide();
+                }
+            },
+      
+        })
+    ```
     * 빈칸일 경우 alert("이메일을 입력해 주세요") 
+    ```javascript
+    if (!email) {
+               alert("이메일을 확인해 주세요")
+               $("#email").focus();
+               return;
+           } 
+    ```
     
 * 비밀번호
     * 최대 8글자 이상입력
-    ```javascript
+```javascript
       if(password && password.length<8) {
                alert("비밀번호 숫자,영문자 최소 8자리 이상")
                $(this).val('');
@@ -90,10 +132,10 @@
                $("#password").focus();
 
 
-           }```
-      
-    * 비밀번호 확인창과 일치 하지 않을 경우 alert("비밀번호 불일치")
-    ```javascript
+           }
+   ```
+   * 비밀번호 확인창과 일치 하지 않을 경우 alert("비밀번호 불일치")\
+ ```javascript
            $("#repassword").on("blur",function(e){
            let password = $("#password").val();
            let repassword = $("#repassword").val();
@@ -106,10 +148,22 @@
                return;
            }
        })
-       ```
-    * 빈칸일 경우 alert("비밀번호를 입력해 주세요") 
+```
+  * 빈칸일 경우 alert("비밀번호를 입력해 주세요") 
+ ```javascript
+ if (!password) {
+               alert("패스워드를 확인해 주세요")
+               $("#password").focus();
+               return;
+           }               
+ ```
 
 * NEXT 버튼을 이용해 프로필사진/ 한줄자기소개 show
+```
+ $(".firstJoin").hide();
+ $(".secondJoin").show();
+                   
+```
     
 * 프로필 사진
     * 필수 입력사항 아님
