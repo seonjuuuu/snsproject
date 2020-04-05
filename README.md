@@ -348,12 +348,57 @@
 
 ### 5. /feed (피드상세) 페이지 구현
 
-* 사진 , 피드작성자의 name, 피드작성자의 photo , feed content , 댓글 확인 가능 
-    * 쿼리스트링을 이용해 feed IDX값을 받아와 api를 호출해 result값을 받아와 화면에 보여준다 
+<img src="https://user-images.githubusercontent.com/62421526/78465598-be1f1680-7732-11ea-92b1-ae9aaabbf4b8.PNG" width="600px" height="500px">
+
+* 피드사진 , 피드작성자의 name, 피드작성자의 photo , feed content , 댓글
+    * 쿼리스트링을 이용해 feed IDX값을 받아와 api를 호출, result를 화면에 보여준다
+    ```javascript
+      
+      //feed?IDX=(idx) 피드idx값을 부여해 가져온다
+      
+      function getUrlParams() {
+      var params = {};
+      window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+      params[key] = value;
+      });
+      return params;
+      }
+    ```
+<img src="https://user-images.githubusercontent.com/62421526/78466275-4523bd00-773a-11ea-8a63-95332a65a1ec.PNG" width="400px">
+```
 * 댓글 입력창에 로그인된 user의 photo를 보여준다.
 * 댓글 input창을 통해 value값을 입력받아 ajax POST를 보내 댓글을 서버로 보내준다.
-* 좋아요 버튼/ 좋아요 갯수 
-* 입력받은 댓글
+```
+
+```javascript
+    $("#replySubmit").on("click",function(){
+        var reply = $("textarea").val();
+        var idx = $("#sessionIdx").html();
+        $.ajax({
+            type:"POST",
+            url:"http://13.125.149.206/api/feedReply/"+user_Idx,
+            data:{
+                USER_IDX:idx,
+                CONTENT: reply
+            },
+            success:function(res){
+                alert("댓글등록완료")
+                window.location.href=window.location.href
+            },
+        })
+    })
+```
+<img src="https://user-images.githubusercontent.com/62421526/78466216-a0a17b00-7739-11ea-8a18-5c75362e797f.PNG" width="600px">
+```
+* 좋아요 버튼/ 좋아요 갯수
+* 피드가 현재 로그인한 유저와 같으면 수정할수 있는 아이콘 생성
+```
+* 댓글 수정 및 삭제
+<img src="https://user-images.githubusercontent.com/62421526/78466292-73090180-773a-11ea-95e0-0c7a27c6e9b9.PNG" width="600px">
+```
+* 내가쓴 댓글은 수정.삭제 버튼 생성
+* 수정버튼을 누르면 input창 생성
+```
 
 ### 6. /editinfo (회원정보수정) 페이지 구현
 
