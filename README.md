@@ -167,6 +167,43 @@
     
 * 프로필 사진
     * 필수 입력사항 아님
+    ```javascript
+           //프로필 사진 미리보기
+    function readURL(input) {
+        if (input.files && input.files[0]) { //파일이 있으면
+            var reader = new FileReader(); //파일을 읽는 객체를 생성
+            reader.onload = function(e) { //파일 읽는것에 성공을 하면 e벤트 함수 실행
+                $('#preImg').attr('src', e.target.result);
+            } //id가 preImg인 div의 src에 타겟이벤트 결과값을 반환해 src에 넣어줘라
+            reader.readAsDataURL(input.files[0]);//file내용을 읽어 dataURL형식의 문자열로 저장해라
+        }
+    }
+      //서버에 저장하는 방식이 아니라 input type =file 의 파일 업로드 형식을 미리보기로 보여준다
+      
+      //서버에 저장하는 방식은 s3에 저장함 axios 호출사용
+          if(document.getElementById("joinprofile").files.length >= 1){
+        selectedFile = document.getElementById("joinprofile").files[0];
+        const extensionUrl = "http://13.125.149.206/api/common/getExtension?type="+selectedFile.type     
+        axios.get(extensionUrl) //처음 데이터의 extension을 가져오는 호출을 실행
+          .then(res => {      
+              var data = res.data
+              const getUploadUrl = "http://13.125.149.206/api/common/fileUploadUrl?mimetype="+selectedFile.type+"&extension="+data.extension
+              axios.get(getUploadUrl)//서버로 올릴 주소를 받아옴
+                .then(s3Res => {      
+                    let signatureUrl = s3Res.data.url
+               
+                    axios.put(signatureUrl, selectedFile, {                    
+                    })            //서버에 올릴 주소와 함께 data를 함께 put함
+                    .then(function (s3res,data)  {
+                        var URL =s3res.request.responseURL
+                        SRC.push(URL)
+                    });
+                   
+                });                        
+          });
+        
+        }
+    ```
 
 * 한줄 자기소개
     * Introduce 
