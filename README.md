@@ -82,7 +82,31 @@
     
 * 비밀번호
     * 최대 8글자 이상입력
+    ```javascript
+      if(password && password.length<8) {
+               alert("비밀번호 숫자,영문자 최소 8자리 이상")
+               $(this).val('');
+               $("#password").val('');
+               $("#password").focus();
+
+
+           }```
+      
     * 비밀번호 확인창과 일치 하지 않을 경우 alert("비밀번호 불일치")
+    ```javascript
+           $("#repassword").on("blur",function(e){
+           let password = $("#password").val();
+           let repassword = $("#repassword").val();
+
+           if (password !== repassword){
+               alert("비밀번호가 불일치")
+               $(this).val('');
+               $("#password").val('');
+               $("#password").focus();
+               return;
+           }
+       })
+       ```
     * 빈칸일 경우 alert("비밀번호를 입력해 주세요") 
 
 * NEXT 버튼을 이용해 프로필사진/ 한줄자기소개 show
