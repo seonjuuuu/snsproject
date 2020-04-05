@@ -17,8 +17,9 @@
         display: none;
     }
     .mainpage{
-        width: auto;
-        height: auto;;
+        width: 300px;
+        height: 520px;
+        margin: 0 auto;
 
     }
     .feed_box{
@@ -74,7 +75,9 @@
         width: 150px;
         height: 150px;
     }
-    
+    .mainedit{
+        margin-top: 30%;
+    }
    
 }
 
@@ -246,11 +249,13 @@ button {
     padding : 35px;
     text-align: center;
     border-radius: 10px;
+    /* margin: 10%; */
     /* margin-bottom: 30px; */
     /* border: 1px solid black; */
 
     
 }
+
 .mainpage>h1 {
     margin-bottom: 40px;
     /* font-family: 'Gothic A1', sans-serif; */
@@ -1027,7 +1032,7 @@ textarea:focus{
 }
 .edit>button{
     margin-top:10px;
-    width: 200px;
+    width: 150px;
 }
 
 /* 이용약관.개인정보처리방침 service,sns ejs */
