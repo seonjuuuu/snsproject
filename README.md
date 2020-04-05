@@ -337,6 +337,7 @@
     ```
 * 프로필 사진 클릭시 프로필 사진 확대
 <img src="https://user-images.githubusercontent.com/62421526/78465814-325ab980-7735-11ea-9ad1-6b70b20dac9c.PNG" width="200px" height="200px">
+
 * feed click 시 피드 상세페이지 이동 
 * '+ button' click 시 feedwrite modal창 show
 
