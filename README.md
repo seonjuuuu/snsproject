@@ -336,12 +336,12 @@
     })
     ```
 * 프로필 사진 클릭시 프로필 사진 확대
-<img src="https://user-images.githubusercontent.com/62421526/78465814-325ab980-7735-11ea-9ad1-6b70b20dac9c.PNG" width="200px" height="200px">
+<img src="https://user-images.githubusercontent.com/62421526/78465814-325ab980-7735-11ea-9ad1-6b70b20dac9c.PNG" width="300px" height="300px">
 
 * feed click 시 피드 상세페이지 이동 
 * '+ button' click 시 feedwrite modal창 show
 
-<img src="https://user-images.githubusercontent.com/62421526/78465837-7c439f80-7735-11ea-9d44-88e04598144b.PNG" width="200px" height="200px">
+<img src="https://user-images.githubusercontent.com/62421526/78465837-7c439f80-7735-11ea-9d44-88e04598144b.PNG" width="300px" height="300px">
 
     * 프로필 클릭 IDX = session.IDX 가 일치할때만 버튼 생성
 
