@@ -352,12 +352,16 @@
 
 ### 4. /feedprofile (User의 상세)  페이지 구현
 
-<img src="https://user-images.githubusercontent.com/62421526/78465703-01c65000-7734-11ea-9f99-2f87e5e0b831.PNG" width="600px" height="500px">
+<img src="https://user-images.githubusercontent.com/62421526/78466725-908c9a00-773f-11ea-9066-48436a64f308.PNG" width="600px" height="500px">
 
 * header 부분 프로필 클릭시 /feedprofile 페이지 이동
 * 클릭한 프로필 user가 작성한 feed를 모아서 볼수 있다.
 * 프로필 편집 button 클릭시 /editinfo 페이지 이동 
-    * IDX가 session.IDX와 일치시만 버튼생성
+
+<img src="https://user-images.githubusercontent.com/62421526/78465703-01c65000-7734-11ea-9f99-2f87e5e0b831.PNG" width="600px" height="500px">
+
+   * IDX가 session.IDX와 일치시만 버튼생성
+    
     ```javascript
         var loginUser_Idx= $(".feedidx").html(); //프로필클릭한 유저의 idx
         var feedUser_Idx= $(".loginidx").html(); //현재 로그인유저의 session.IDX
