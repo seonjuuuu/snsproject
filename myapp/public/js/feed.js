@@ -154,6 +154,35 @@ $(document).ready(function () {
 
     //   });
 
+    
+    $("#replySubmit").on("click",function(){
+
+        var reply = $("textarea").val();
+        var idx = $("#sessionIdx").html();
+
+        $.ajax({
+            type:"POST",
+            url:"http://13.125.149.206/api/feedReply/"+user_Idx,
+            data:{
+                USER_IDX:idx,
+                CONTENT: reply
+            },
+            success:function(res){
+
+                alert("댓글등록완료")
+                window.location.href=window.location.href
+
+
+            },
+
+
+
+        })
+
+
+
+    })
+
 
     // 수정버튼 눌렀을때 
 

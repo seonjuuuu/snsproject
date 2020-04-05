@@ -117,7 +117,7 @@ $(document).ready(function () {
 
 
         var loginUser_Idx= $(".feedidx").html();
-        var feedUser_Idx= $("h6").html();
+        var feedUser_Idx= $(".loginidx").html();
         
     
         // console.log(loginUser_Idx);
