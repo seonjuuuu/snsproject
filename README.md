@@ -207,12 +207,6 @@
       * 이용약관 button - /mainpage/service 이동
       * 개인정보 취급방침 button - /mainpage/sns 이동
       * 로그아웃 button - session 삭제, index로 이동
-      ```javascript
-       router.get('/logout', function(req, res, next) {
-      req.session.destroy();
-      res.redirect('/') 
-      });
-      ```
 
 * 현재 로그인된 사용자 프로필 사진
 <img src="https://user-images.githubusercontent.com/62421526/78465703-01c65000-7734-11ea-9f99-2f87e5e0b831.PNG" width="400px" height="300px">
@@ -232,21 +226,34 @@
 
 ### 4. /feedprofile (User의 상세)  페이지 구현
 
+<img src="https://user-images.githubusercontent.com/62421526/78465703-01c65000-7734-11ea-9f99-2f87e5e0b831.PNG" width="600px" height="500px">
+
 * header 부분 프로필 클릭시 /feedprofile 페이지 이동
 * 클릭한 프로필 user가 작성한 feed를 모아서 볼수 있다.
 * 프로필 편집 button 클릭시 /editinfo 페이지 이동 
     * IDX가 session.IDX와 일치시만 버튼생성
+    ```javascript
+        var loginUser_Idx= $(".feedidx").html(); //프로필클릭한 유저의 idx
+        var feedUser_Idx= $(".loginidx").html(); //현재 로그인유저의 session.IDX
+ 
+        if(loginUser_Idx !== feedUser_Idx){
+    
+            $(".feedPlusbox").css("display","none");
+            $(".useredit").css("display","none");
+    
+        }
+    ```
 * 사용자의 프로필 ( 사진, 닉네임, e-maill, introduce ) 나타냄 
     * 회원정보 수정하면 반영되어 나타남
 * 프로필 사진 클릭시 프로필 사진 확대
+<img src="https://user-images.githubusercontent.com/62421526/78465814-325ab980-7735-11ea-9ad1-6b70b20dac9c.PNG" width="200px" height="200px">
 * feed click 시 피드 상세페이지 이동 
 * '+ button' click 시 feedwrite modal창 show
+
+<img src="https://user-images.githubusercontent.com/62421526/78465837-7c439f80-7735-11ea-9d44-88e04598144b.PNG" width="200px" height="200px">
+
     * 프로필 클릭 IDX = session.IDX 가 일치할때만 버튼 생성
-    * 현재 로그인 된 사용자 사진과 닉네임을 보여준다 ("(사용자닉네임)님 당신의 이야기를 보여주세요")
-    * 사진 입력 - 사진 미리보기 가능
-    * textarea를 통해서 feedcontent 입력
-    * submit으로 ajax를 이용해 서버에 POST후 /profile 이동. 
-    * X 버튼을 누르면 feedwrite 창을 hidden 시킨다
+
 
 ### 5. /feed (피드상세) 페이지 구현
 
