@@ -57,7 +57,7 @@
     
   });
   ```
-  
+  * 세션을 통해서 로그인 유지 / 세션이 없다면 메인페이지 이동
   ```javascript
   if(!req.session.IDX){
   res.redirect('/');
