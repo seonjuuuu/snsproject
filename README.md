@@ -8,6 +8,34 @@
 * 이메일 주소, 비밀번호 입력
 * 서버에 저장된 session을 통해서 로그인 유지
 
+```
+
+  request.post(url, {
+      json: data
+  }, (error, response, body) => {
+      if (!error && response.statusCode === 200) {
+        // console.log(request.session.user)
+        // console.log('session', req.session)
+        // console.log(response.body)
+        
+       
+        let loginUser= response.body.login
+        // console.log(req.session.user)
+        
+        req.session.IDX = loginUser.IDX;
+        req.session.EMAIL = loginUser.EMAIL;
+        req.session.NAME = loginUser.NAME;
+        req.session.INTRODUCE = loginUser.INTRODUCE;
+        req.session.PATH= loginUser.PATH;
+        // console.log(req.session)
+        res.send("true")
+      } else {
+          res.send("false")
+      }
+    
+  });
+  ```
+
 ### 2. /join (회원가입) 페이지 구현
     
 * 닉네임
