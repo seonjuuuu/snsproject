@@ -245,6 +245,59 @@
     ```
 * 사용자의 프로필 ( 사진, 닉네임, e-maill, introduce ) 나타냄 
     * 회원정보 수정하면 반영되어 나타남
+    ```javascript
+     //수정버튼 api호출
+    
+    $("#feedEdit").on("click",function(){
+        
+        var content = $("textarea").val();
+
+        if(confirm("수정하시겠습니까?")){
+            $.ajax({
+                type:"PUT",
+                url:"http://13.125.149.206/api/feed/"+user_Idx,
+                data : {
+                    CONTENT:content
+                },
+                success:function(res){
+                    alert("수정완료")
+                    window.location.assign("/mainpage")
+                
+                },
+                error:function(err){
+                    alert("오류발생")
+                }
+                
+        
+            })
+        
+        }
+    })
+    //탈퇴 api 호출
+    
+      $("#feedDelete").on("click",function(){
+        if(confirm("삭제하시겠습니까?")){
+            $.ajax({
+                type:"DELETE",
+                url:"http://13.125.149.206/api/feed/"+user_Idx,
+       
+                success:function(res){
+                    alert("삭제완료")
+                    window.location.assign("/mainpage")
+                    // console.log(res)
+                },
+                error:function(err){
+                    alert("오류발생")
+                }
+                
+        
+            })
+        
+
+
+        }
+    })
+    ```
 * 프로필 사진 클릭시 프로필 사진 확대
 <img src="https://user-images.githubusercontent.com/62421526/78465814-325ab980-7735-11ea-9ad1-6b70b20dac9c.PNG" width="200px" height="200px">
 * feed click 시 피드 상세페이지 이동 
