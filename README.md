@@ -216,6 +216,93 @@
 
 * 사이트 저장된 모든 피드 21개씩 paging
 
+```javascript
+
+  let pageNum=1;
+  getUserFeed(pageNum);
+
+  function getUserFeed(pageNum){
+    $(".box").empty();
+    var limit = 21 ;
+    $.ajax({
+      type:"GET",
+      url:"http://13.125.149.206/api/feed",
+      success:function(res){
+      var pageCnt = Math.ceil(res.result.length/limit);
+      for (let i = (res.result.length-1)-(pageNum-1)*limit; i>(res.result.length-1)-(pageNum*limit); --i){
+         
+      var html = "<div class = 'feedbox'><a href='/mainpage/feed?IDX="+res.result[i].IDX+"'><img id=myfeed src ="+res.result[i].PATH+"></a></div>"
+      
+          if(res.result[i].PATH==null) { //피드이미지가 없을경우 대체이미지를 보여준다
+
+            var html="<div class='feedbox'><img id=myfeed src='/img/nothing.png'></div>"        
+          }
+          
+          $('.box').append(html)
+
+        }
+        getPagingBtn(pageCnt);
+      }
+    })
+  }
+
+//피드 페이징 버튼 생성
+
+  function getPagingBtn (pageCnt) {
+    $('.paging').empty();
+    for (let i =0; i < pageCnt; i++) {
+        let cnt = i + 1;
+        let prev = '<div class="direction prev">이전</div>'
+        let pBtn = '<div class="pBtn ">'+cnt+'</div>'
+        let next = '<div class="direction next">다음</div>'
+
+        if (i == 0) {
+            $('.paging').append(prev);
+            $('.paging').append(pBtn);
+            $('.pBtn').addClass("strong");
+        } else if (i == pageCnt - 1) {
+            $('.paging').append(pBtn);
+            $('.paging').append(next);
+        } else {
+            $('.paging').append(pBtn);
+        }
+    }
+
+    $('.prev').on('click', function(e) {
+        // alert(pageNum)
+        if (pageNum == 1) {
+            alert('이전 페이지가 없습니다')
+        } else {
+            pageNum = pageNum - 1;
+        }
+        
+        getUserFeed(pageNum)
+    })
+
+    $('.pBtn').on('click', function(e) {
+      var num = $(this).text()
+      // console.log(num)
+      pageNum = num;      
+      $('.pBtn').removeClass('strong')         
+      $(this).addClass('strong')
+      getUserFeed(pageNum)
+  })
+
+    $('.next').on('click', function(e) {
+        if (pageNum == pageCnt) {
+            alert('다음 페이지가 없습니다')
+        } else {
+            pageNum = pageNum*1 + 1;
+            $('.pBtn').removeClass('strong') ;
+            $('.pBtn').next('.pBtn').addClass('strong') 
+
+            getUserFeed(pageNum)
+        }
+    })
+}
+
+```
+
 <img src="https://user-images.githubusercontent.com/62421526/78465587-8f08a500-7732-11ea-91a0-5db889ea3695.PNG" width="400px" height="300px">
 
 * feed click 시 feed 상세 페이지로 이동
