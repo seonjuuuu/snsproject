@@ -505,7 +505,10 @@ $("#deletebtn").on("click",function(e){
 
 ## 반응형페이지 작업
 
-
+<img src="https://user-images.githubusercontent.com/62421526/78467544-da2db280-7748-11ea-9d3a-3319ec3ab27e.PNG" width="300px"> <img src="https://user-images.githubusercontent.com/62421526/78467546-db5edf80-7748-11ea-8c5a-fefe1c363bfb.PNG" width="300px">
+<img src="https://user-images.githubusercontent.com/62421526/78467545-dac64900-7748-11ea-8253-2e9cc8ba1548.PNG" width="300px"> <img src="https://user-images.githubusercontent.com/62421526/78467549-dbf77600-7748-11ea-8661-22d6b2468037.PNG" width="300px">
+<img src="https://user-images.githubusercontent.com/62421526/78467550-dc900c80-7748-11ea-813f-9b869db7114e.PNG" width="300px"> <img src="https://user-images.githubusercontent.com/62421526/78467542-d9951c00-7748-11ea-9849-f9b2af05040b.PNG" width="300px">
+<img src="https://user-images.githubusercontent.com/62421526/78467547-db5edf80-7748-11ea-89f2-2b64feaadeeb.PNG" width="300px"> <img src="https://user-images.githubusercontent.com/62421526/78467551-dc900c80-7748-11ea-9f65-e5bd8777da37.PNG" width="300px">
 
 
 ## 문제 해결
