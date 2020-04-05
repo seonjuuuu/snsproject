@@ -306,7 +306,7 @@
 
 ```
 
-
+* 텍스트 애니메이션 효과
 * feed click 시 feed 상세 페이지로 이동
 
 <img src="https://user-images.githubusercontent.com/62421526/78465598-be1f1680-7732-11ea-92b1-ae9aaabbf4b8.PNG" width="400px" height="300px">
@@ -503,33 +503,27 @@ $("#deletebtn").on("click",function(e){
 * textarea로 글씨 수정할수 있는 수정페이지를 바꿔준다.
 * 수정버튼 / 삭제 버튼 활성화 시킨다
 
+## 반응형페이지 작업
+
+
+
 
 ## 문제 해결
-### 2020-03-25
-  1. profile 페이지 업그레이드
-   > 프로필 클릭시 로그인했던 가입자만 볼수있던 상세페이지를 모든 user의 프로필 클릭시 확인할 수 있도록 업그레이드
 
-   > 로그인한 사용자가 본인의 프로필 사진을 클릭했을 시 프로필편집 button + feedwrite modal창까지 함께 볼수 있음
+### 피드 상세페이지 (/feed)에서 textarea로 입력받은 값을 호출해서 data를 보여줬을때 엔터는 먹지 않음
+ * ajax값을 먼저 호출한후 값을 div에 넣어 보여준뒤 그 val값을 replace한다 . val값이 자체가 존재하지 않기 때문에 바뀌지 않음 
+ 
+ > 받아온 데이터 값에 \n값을 replace해 </br>로 바꿔 문제해결
+ 
+ 
+ ```
+ $("content).html(feedUserContent.replace(/\n\g,'</br>'))
+ ```
 
-   > header에 IDX값을 hidden으로 넣어 , 주소값의 쿼리스트링값과 비교하여 같다면 button구현
- 2. 피드 상세페이지 (/feed)에서 textarea로 입력받은 값을 호출해서 data를 보여줬을때 엔터는 먹지 않음
- > ajax값을 먼저 호출한후 값을 div에 넣어 보여준뒤 그 val값을 replace한다
- >  > val값이 자체가 존재하지 않기 때문에 바뀌지 않는다 
- > 받아온 데이터 값에 \n값을 replace해 </br>로 바꾼다
-    > $("content).html(feedUserContent.replace(/\n\g,'</br>'))
+### (/editinfo)회원정보수정페이지 삭제기능 추가
 
-### 2020-03-26
-1. (/mainpage)메인페이지 피드 페이징 수정
-> 데이터값을 역순으로 보일수 있게 자바스크립트 처리
-```
- for (let i = (res.result.length-1)-(pageNum-1)*limit; i>(res.result.length-1)-(pageNum*limit); --i){
-         
-          var html = "<div class = 'feedbox'><a href='/mainpage/feed?IDX="+res.result[i].IDX+"'><img id=myfeed src ="+res.result[i].PATH+"></a></div>"
-        
-```
-> 피드 30개가 넘어가면 페이징 버튼 생성
-2. (/editinfo)회원정보수정페이지 삭제기능 추가
-> 사진 선택 후 삭제버튼을 누르면 이전의 사진이 PATH값으로 저장되는 문제 발생
+* 사진 선택 후 삭제버튼을 누르면 이전의 사진이 PATH값으로 저장되는 문제 발생
+
 > 
 ```    
     if(!src ){
@@ -541,41 +535,34 @@ $("#deletebtn").on("click",function(e){
         src=imgSrc[0];
     } 
 ```
->   > else if구문 추가 src을 변환시켜서 ajax 호출하여 문제 해결
+else if구문 추가 src을 변환시켜서 이미지값을 not.png로 넣고 이미지값이 있다면 호출한값의 주소를 넣어 문제 해결
 
-### 2020-03-27
-1. 좋아요/ 좋아요 취소 버튼 추가 및 기능 생성
-> 좋아요 클릭시 api post 호출 , feedlike 값 증가 시킴
-> feed의 IDX값은 피드리스트 호출 주소를 통해 불러옴 , 현재 로그인한 유저IDX값은 피드에  ejs값을 가져와 hidden시킨후 그값을 이용함
-> 문제점 : 피드 좋아요를 클릭 후에 피드를 다시 새로고침 하면 좋아요 기능 다시 활성화
+### 좋아요/ 좋아요 취소 버튼 추가 및 기능 생성
 
-2. 메인페이지 애니메이션 효과 추가
+* 좋아요 클릭시 api post 호출 , feedlike 값 증가 시킴
 
-3. 반응형페이지 작업 완료
-> 모든 페이지를 반응형으로 나오도록 작업
+> 문제점 : 피드 좋아요를 클릭 후에 피드를 다시 새로고침 하면 좋아요 기능 다시 활성화 - 서버에서 데이터 저장이 안되기 때문에 나타낼수 없음
 
-4. 피드 수정/삭제 페이지 작업
+
+### 피드 수정/삭제 페이지 작업
+
 > 피드 수정은 본인 게시물만 수정할 수 있도록 로그인 유저와 피드 작성 유저를 비교하여 같을 경우에만 수정버튼이 보이도록 설정
+
 ```
 
             if(feedUserIdx==idx){
                 $("#feededitbtn").css("display","inline");
             }
 ```
-### 2020-03-28
-
-1. 댓글 데이터 api 호출 
-> 현재 서버상에 댓글을 작성한 USER_IDX가 저장이 되지않아 사진과 닉네임을 불러오는데 문제가 발생
 
 
 
-### 2020-04-02
+### 댓글의 idx값과 user의 idx값을 가져오기
 
-1. 댓글의 idx값과 user의 idx값을 가져오는데 성공
 > 댓글의 idx값을 불러오기 위해서 제이쿼리로 클릭했을때 그 클릭한 값의 val값을 가져옴. id값을 처음에 부여해 한가지 값만 계속 반환되었음
 name으로 처리해 , 클릭한 값 데이터를 가져옴
 
-2. 
+
 
 
 
