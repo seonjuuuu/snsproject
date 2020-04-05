@@ -189,11 +189,11 @@
 
 <img src="https://user-images.githubusercontent.com/62421526/78465609-f6bef000-7732-11ea-9e47-cff8184234d6.PNG" width="400px" height="300px">
 
-   * 현재 로그인 된 사용자 사진과 닉네임을 보여준다 ("(사용자닉네임)님 당신의 이야기를 보여주세요")
-   * 사진 입력 - 사진 미리보기 가능
-   * textarea를 통해서 feedcontent 입력
-   * submit으로 ajax를 이용해 서버에 POST후 /profile 이동. 
-   * X 버튼을 누르면 feedwrite 창을 hidden 시킨다
+      * 현재 로그인 된 사용자 사진과 닉네임을 보여준다 ("(사용자닉네임)님 당신의 이야기를 보여주세요")
+      * 사진 입력 - 사진 미리보기 가능
+      * textarea를 통해서 feedcontent 입력
+      * submit으로 ajax를 이용해 서버에 POST후 /profile 이동. 
+      * X 버튼을 누르면 feedwrite 창을 hidden 시킨다
 
 * hambuger menu 버튼
 
@@ -207,12 +207,12 @@
       * 이용약관 button - /mainpage/service 이동
       * 개인정보 취급방침 button - /mainpage/sns 이동
       * 로그아웃 button - session 삭제, index로 이동
-   ```javascript
-   router.get('/logout', function(req, res, next) {
-  req.session.destroy();
-  res.redirect('/')
-});
-   ```
+      ```javascript
+       router.get('/logout', function(req, res, next) {
+      req.session.destroy();
+      res.redirect('/') 
+      });
+      ```
 
 * 현재 로그인된 사용자 프로필 사진
 <img src="https://user-images.githubusercontent.com/62421526/78465703-01c65000-7734-11ea-9f99-2f87e5e0b831.PNG" width="400px" height="300px">
@@ -223,6 +223,12 @@
 * 로고 클릭시 /mainpge 이동
 
 * session이 없을 경우 index페이지로 이동 
+```javascript
+   router.get('/logout', function(req, res, next) {
+   req.session.destroy();
+    res.redirect('/') 
+   });
+   ```
 
 ### 4. /feedprofile (User의 상세)  페이지 구현
 
