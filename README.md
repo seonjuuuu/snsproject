@@ -6,6 +6,34 @@
 
 
 * 이메일 주소, 비밀번호 입력
+```javascript
+      $(document).ready(function(){
+        $("#loginbtn").on("click", function (e) {
+        e.preventDefault();
+        var email = $("#email").val();
+        var password = $("#password").val()          
+          if(confirm("로그인하시겠습니까?")){
+            $.ajax ({
+              type: "POST",
+              url:"/login",
+              data:{
+                EMAIL: email,
+                PASSWORD: password
+              },              
+              success:function(res){
+                if(res ==="true"){
+                  alert("로그인 성공");
+                window.location.assign("/mainpage")
+                } else if ( res === "false"){ alert("로그인 실패")}
+                else {}
+              }
+            })         
+          // } else{
+     
+          }
+        })
+      })
+
 * 서버에 저장된 session을 통해서 로그인 유지
 
 ```javascript
