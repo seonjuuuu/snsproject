@@ -57,6 +57,13 @@
     
   });
   ```
+  
+  ```javascript
+  if(!req.session.IDX){
+  res.redirect('/');
+  return;
+}
+```
 
 ### 2. /join (회원가입) 페이지 구현
     
