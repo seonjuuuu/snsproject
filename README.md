@@ -1,4 +1,4 @@
-# SNSPROJECT
+# SNS PROJECT - "TOCTOC"
 ## 페이지 구현
 ### 1. index (로그인) 페이지 구현
 
