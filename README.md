@@ -66,7 +66,7 @@
 ```
 
 ### 2. /join (회원가입) 페이지 구현
-<img src="https://user-images.githubusercontent.com/62421526/78465034-a55f3280-772b-11ea-985f-c57c4cb812e7.PNG" width="300px"><img src="https://user-images.githubusercontent.com/62421526/78465035-a6905f80-772b-11ea-88d8-8148c33bb163.PNG" width="300px">
+<img src="https://user-images.githubusercontent.com/62421526/78465034-a55f3280-772b-11ea-985f-c57c4cb812e7.PNG" width="300px" height="200px"> <img src="https://user-images.githubusercontent.com/62421526/78465035-a6905f80-772b-11ea-88d8-8148c33bb163.PNG" width="300px" height="200px">
     
 * 닉네임
 
