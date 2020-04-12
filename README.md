@@ -475,7 +475,7 @@ router.delete('/deleteEdit',(req,res)=>{
       * submit으로 ajax를 이용해 서버에 POST후 /profile 이동. 
       * X 버튼을 누르면 feedwrite 창을 hidden 시킨다
       
-      ```javascript
+```javascript
       
             // 글쓰기 모달창 버튼 클릭 ajax 
 
@@ -531,7 +531,7 @@ router.delete('/deleteEdit',(req,res)=>{
             })
 
       
-      ```
+```
 
 * hambuger menu 버튼
 
