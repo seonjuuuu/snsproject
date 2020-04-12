@@ -209,6 +209,155 @@
         
         }
     ```
+    
+* 수정 버튼
+
+```javascript
+
+// img클릭시 반환값이 없을때
+
+    if(!src ){
+       src=proimg;
+    }else if( $("#proImg").attr('src')=='/img/not.png'){
+        src='';
+    }else {
+        imgSrc=src.split("?");
+        src=imgSrc[0];
+    } 
+
+    if(confirm("수정하시겠습니까?")){ 
+        $.ajax({
+            type:"PUT",
+            url:"/edit",
+            data: {
+                NAME: name,
+                PASSWORD:password,
+                INTRODUCE:introduce,
+                PATH:src,
+            },
+            success:function(res){
+                if(res==="true"){
+                    alert("수정완료")
+                
+                window.location.assign("/mainpage")
+            
+                }else if( res === "false"){
+                    alert("수정실패")
+               
+                }
+                else{}
+            }
+        })
+       
+    }
+
+})
+```
+* 탈퇴 버튼
+```javascript
+
+//탈퇴 ajax
+
+$("#deletebtn").on("click",function(e){
+ 
+
+    if(confirm("정말로 탈퇴하시겠습니까?")){ 
+        $.ajax({
+            type:"DELETE",
+            url:"/deleteEdit",
+    
+            success:function(res){
+                if(res==="true"){
+                    alert("탈퇴되셨습니다")
+                
+                window.location.assign("/")
+            
+                }else if( res === "false"){
+                    alert("에러발생")
+               
+                }
+                else{}
+            }
+        })
+       
+    }
+
+})
+
+
+```
+
+* 수정과 탈퇴 url을 라우터로 보내서 세션값을 이용한다
+
+```javascript
+
+//회원정보 수정
+router.put('/edit',(req,res)=>{
+  var url ="http://13.125.149.206/api/user";
+  var email= req.session.EMAIL;
+  var idx = req.session.IDX;
+  var name = req.body.NAME;
+  var introduce = req.body.INTRODUCE;
+  var password= req.body.PASSWORD;
+  var path= req.body.PATH;
+
+
+  var data ={
+    IDX : idx,
+    EMAIL: email,
+    NAME: name,
+    INTRODUCE : introduce,
+    PASSWORD: password,
+    PATH:path
+  }
+
+  request.put(url,{
+    json:data
+  },(error,response,body)=>{
+    if(!error &&response.statusCode===200){
+      // console.log(response.body)
+      req.session.NAME =req.body.NAME;
+      req.session.INTRODUCE = req.body.INTRODUCE;
+      req.session.PATH = req.body.PATH;
+     
+      // console.log(req.session)
+      res.send("true")
+    } else{
+      res.send("false")
+    }
+  })
+
+})
+
+
+//탈퇴
+
+router.delete('/deleteEdit',(req,res)=>{
+  var url ="http://13.125.149.206/api/user";
+  var idx = req.session.IDX;
+  var data ={
+    IDX : idx,
+
+  }
+
+  request.delete(url,{
+    json:data
+  },(error,response,body)=>{
+    if(!error &&response.statusCode===200){
+      
+
+      res.send("true")
+    } else{
+      res.send("false")
+    }
+  })
+
+})
+
+
+```
+
+
 
 * 한줄 자기소개
     * Introduce 
