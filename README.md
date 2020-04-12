@@ -474,6 +474,64 @@ router.delete('/deleteEdit',(req,res)=>{
       * textarea를 통해서 feedcontent 입력
       * submit으로 ajax를 이용해 서버에 POST후 /profile 이동. 
       * X 버튼을 누르면 feedwrite 창을 hidden 시킨다
+      
+      ```javascript
+      
+            // 글쓰기 모달창 버튼 클릭 ajax 
+
+            $('#feedupbtn').on("click", function (e) {
+
+                let content = $("#feedcontent").val();
+                let feedimg=$("#feedUpImg").attr("src");
+                var src = SRC.slice(-1)[0];
+                  
+                  // 제일마지막 배열값을 불러와 사진을 저장할수 있도록 url을 가져온다   
+
+            
+                if (feedimg==="/img/feedup.png" ) {
+                    alert("사진을 빼먹었어요!!")
+                   $("#content").focus();
+                   return;
+                }
+                
+                // console.log()
+
+                if (confirm("피드를 등록할까요?")) {
+
+                    var imgSrc = src.split("?");
+                    src = imgSrc[0]
+                    e.preventDefault();
+                    
+                    $.ajax({
+                        type: "POST",
+                        url: "/mainpage/feedwrite",
+                        data: {
+                            CONTENT: content,
+                            PATH: src
+                        },
+                        
+                        success:function(res){
+                            // console.log("data____",res)
+                            if(res==="true"){
+                                alert("피드등록 성공")
+                                  
+                                 window.location.assign("/mainpage")
+                            } else if( res === "false"){
+                                alert("피드등록 실패")
+                            }
+                            
+                        }
+                    })
+                }
+
+
+
+
+
+            })
+
+      
+      ```
 
 * hambuger menu 버튼
 
