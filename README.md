@@ -568,6 +568,36 @@ router.delete('/deleteEdit',(req,res)=>{
 
 * header 부분 프로필 클릭시 /feedprofile 페이지 이동
 * 클릭한 프로필 user가 작성한 feed를 모아서 볼수 있다.
+
+```javascript
+
+
+    //피드모아서 화면에 보여주기  - 각각의 유저의 피드 모아보기 
+    $.ajax({
+        type:"GET",
+        url:"http://13.125.149.206/api/feed?userIdx="+user_Idx,
+        success:function(res){
+
+            // console.log(res)
+
+            for(i=res.result.length-1; i>-1; --i){
+                var html ="<div class = 'feedbox'><a href='/mainpage/feed?IDX="+res.result[i].IDX+"'><img id=myfeed src ="+res.result[i].PATH+"></a></div>"
+                $(".feed_box").append(html)
+
+                if(res.result[i].PATH==null) {
+
+                    var html="<div class='feedbox'><img id=myfeed src='/img/nothing.png'></div>"
+                    // return;
+                    
+                  }
+            }
+
+
+            
+        }
+    })
+    
+```
 * 프로필 편집 button 클릭시 /editinfo 페이지 이동 
 
 
@@ -587,6 +617,43 @@ router.delete('/deleteEdit',(req,res)=>{
     ```
 * 사용자의 프로필 ( 사진, 닉네임, e-maill, introduce ) 나타냄 
     * 회원정보 수정하면 반영되어 나타남
+    
+```javascript
+//쿼리값에 user idx값을 부여 , 그값을 가져오는 함수 
+   openparam=getUrlParams();
+    user_Idx=openparam.userIdx;
+
+    $.ajax({
+        type:"GET",
+        url:"http://13.125.149.206/api/user/"+user_Idx,
+        async: false,
+        success:function(res){
+
+            var result = res.result[0];
+            var feedUserEmail = result.EMAIL;
+            var feedUserName = result.NAME;
+            var feedUserIntroduce = result.INTRODUCE;
+            var feedUserPhoto=result.PATH;
+            var feedUserIdx= result.IDX;
+
+
+
+            $('dt').html(feedUserName);
+            $("#feeduserImg").attr('src',feedUserPhoto);
+            $(".feedintroduce").html(feedUserIntroduce);
+            $(".feedemail").html(feedUserEmail);
+            $("#preImg").attr('src',feedUserPhoto);
+            $(".feedidx").html(feedUserIdx);
+
+      
+             if(!feedUserPhoto){
+                 $("#feeduserImg").attr("src","/img/not.png")
+                 $("#preImg").attr("src","/img/not.png")
+             }
+        }
+    })
+
+```
 
 * 프로필 사진 클릭시 프로필 사진 확대
 
@@ -598,6 +665,25 @@ router.delete('/deleteEdit',(req,res)=>{
 <img src="https://user-images.githubusercontent.com/62421526/78465837-7c439f80-7735-11ea-9d44-88e04598144b.PNG" width="300px" height="300px">
 
     * 프로필 클릭 IDX = session.IDX 가 일치할때만 버튼 생성
+    
+```javascript
+  
+  var loginUser_Idx= $(".feedidx").html();
+  var feedUser_Idx= $(".loginidx").html();
+        
+    
+        // console.log(loginUser_Idx);
+        // console.log(feedUser_Idx);
+    
+        if(loginUser_Idx !== feedUser_Idx){
+    
+            $(".feedPlusbox").css("display","none");
+            $(".useredit").css("display","none");
+    
+        }
+
+
+```
 
 
 ### 5. /feed (피드상세) 페이지 구현
@@ -648,6 +734,52 @@ router.delete('/deleteEdit',(req,res)=>{
 ```
 * 좋아요 버튼/ 좋아요 갯수
 * 피드가 현재 로그인한 유저와 같으면 피드를 수정할수 있는 아이콘 생성
+```
+```javascript
+   //좋아요버튼 눌렀을때 ajax호출
+    $("#dislike").on("click", function () {
+        $.ajax({
+            type: "GET",
+            url: "http://13.125.149.206/api/feed?idx=" + user_Idx,
+            success: function (res) {
+                var result = res.result[0];
+                var feedlike = result.FEED_LIKE;
+
+                $.ajax({
+                    type: "POST",
+                    url: "http://13.125.149.206/api/feedLike/" + result.IDX + "/" + idx,
+                    success: function (res) {
+                        $(".feedLikeCount").text(feedlike + 1);
+                        $("#dislike").css("display", "none");
+                        $("#like").css("display", "block");
+                    }
+                });
+            }
+        });
+    });
+
+    //싫어요버튼 눌렀을때 ajax 호출
+    $("#like").on("click", function () {
+        $.ajax({
+            type: "GET",
+            url: "http://13.125.149.206/api/feed?idx=" + user_Idx,
+            success: function (res) {
+                var result = res.result[0];
+                var feedlike = result.FEED_LIKE;
+
+                $.ajax({
+                    type: "DELETE",
+                    url: "http://13.125.149.206/api/feedLike/" + result.IDX + "/" + idx,
+                    success: function (res) {
+                        $(".feedLikeCount").text(feedlike - 1);
+                        $("#like").css("display", "none");
+                        $("#dislike").css("display", "block");
+                    }
+                });
+            }
+        });
+    });
+
 ```
 
 * 댓글 수정 및 삭제
