@@ -4,13 +4,12 @@
 * 프론트앤드 작업 (me)
 * 백앤드 개발자와 협업
 
-[![snsproject](http://img.youtube.com/vi/6hJ4KR4e2sA/1.jpg)](https://youtu.be/6hJ4KR4e2sA?t=0s) 
+
 
 
 ## 페이지 구현
 ### 1. index (로그인) 페이지 구현
 
-<img src="https://user-images.githubusercontent.com/62421526/107330108-7dcbba00-6af4-11eb-8a1d-918c54c9f3b4.gif" >
 <img src="https://user-images.githubusercontent.com/62421526/78464782-67acda80-7728-11ea-936b-895d03cc1bf5.PNG" width="500px">
 
 
