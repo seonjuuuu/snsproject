@@ -3,7 +3,7 @@
 * html, css, javascript , node express 를 이용
 * 프론트앤드 작업 (me)
 * 백앤드 개발자와 협업
-<img src="https://user-images.githubusercontent.com/62421526/107330108-7dcbba00-6af4-11eb-8a1d-918c54c9f3b4.gif">
+<img src="https://user-images.githubusercontent.com/62421526/107330108-7dcbba00-6af4-11eb-8a1d-918c54c9f3b4.gif" width="1000">
 
 ## 페이지 구현
 ### 1. index (로그인) 페이지 구현
