@@ -1,7 +1,7 @@
 # SNS PROJECT - "TOCTOC"
 
 * html, css, javascript , node express 를 이용
-* 프론트앤드 작업 (me)
+* 프론트앤드 작업 (me) 기여도 100%
 * 백앤드 개발자와 협업
 
 
