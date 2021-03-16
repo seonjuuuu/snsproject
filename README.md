@@ -1,6 +1,7 @@
 # SNS PROJECT - "TOCTOC"
 
-* html, css, javascript , node express 를 이용
+* html, css, javascript , node express 를 이용하여 프론트 작업
+* 서버연결은 라우터를 활용해서 연결
 * 프론트앤드 작업 (me) 
 * 백앤드 개발자와 협업 , 서버부분은 백앤드 개발자 1명과 함께 
 
